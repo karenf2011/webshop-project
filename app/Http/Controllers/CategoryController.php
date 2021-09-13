@@ -46,11 +46,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $products = $category->products
-                    ->load('brand', 'categories', 'time_period', 'images');
-        
         return view('categories/show', [
-            'products'  => $products,
+            'products'  => $category->products,
         ]);
     }
 
