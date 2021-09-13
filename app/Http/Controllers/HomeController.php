@@ -25,8 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $featured = Category::with('products.brand', 'products.time_period', 'products.categories', 'products.images')
-                        ->first()->products;
+        $featured = Category::first()->products
+                        ->load('brand', 'categories', 'time_period', 'images');
+        
         return view('home', [
             'featured'    => $featured,
         ]);

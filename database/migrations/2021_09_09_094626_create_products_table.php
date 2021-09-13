@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('brand_id')->references('id')->on('brands');
             $table->foreignId('time_period_id')->references('id')->on('time_periods');
             $table->string('name');
-            $table->string('slug')->nullable();
+            $table->string('slug');
             $table->decimal('price', 6, 2);
             $table->integer('stock');
             $table->year('design_year')->nullable();
