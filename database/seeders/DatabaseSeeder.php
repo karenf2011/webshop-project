@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TimePeriodSeeder::class);
         $this->call(ProductSeeder::class);
         $this->call(ProductCategoriesSeeder::class);
+        $this->call(ImageSeeder::class);
 
         \App\Models\Address::factory(5)->create();
     }

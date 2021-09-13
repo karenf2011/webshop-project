@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('time_period', 'brand', 'categories')->get();
-
+        $products = Product::with('time_period', 'brand', 'categories', 'images')->get();
         return view('products/index', [
             'products'  => $products,
         ]);
