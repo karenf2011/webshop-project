@@ -1,9 +1,12 @@
 <?php
 
-Namespace App\Http\Controllers;
+// Namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
