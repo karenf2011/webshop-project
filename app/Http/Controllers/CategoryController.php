@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        dd(Category::first()->name);
+        //
     }
 
     /**
@@ -46,9 +46,12 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $products = $category->products;
+        $products = $category->products
+                    ->load('brand', 'categories', 'time_period', 'images');
         
-        dd($products);
+        return view('categories/show', [
+            'products'  => $products,
+        ]);
     }
 
     /**
