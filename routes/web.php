@@ -1,6 +1,9 @@
 <?php
 
+Namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Auth::routes();
+
+Route::get('home', [HomeController::class, 'index'])->name('home');
+
+Route::resource('products', ProductController::class);
+Route::resource('categories', CategoryController::class);
+
+// Route::resource('product', ProductController::class, ['parameters' => ['product' => 'product:slug']]);
+// Route::resource('category', CategoryController::class, ['parameters' => ['category' => 'category:name']]);
