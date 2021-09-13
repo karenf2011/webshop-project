@@ -25,10 +25,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('brand', 'categories', 'time_period', 'images')->get();
-
         return view('products/index', [
-            'products'  => $products,
+            'products'  => Product::all(),
         ]);
 
     }
@@ -62,8 +60,6 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $product = $product->load('brand', 'categories', 'time_period', 'images');
-
         return view('products/show', [
             'product'   => $product,
         ]);
