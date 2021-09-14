@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,10 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     // $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -24,9 +23,10 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    {        
         return view('home', [
-            'featured'    => Category::first()->products,
+            'featured'      => Category::first()->products,
+            'categories'    => Category::all()->whereNotin('id', 1),
         ]);
     }
 }

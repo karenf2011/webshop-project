@@ -48,6 +48,7 @@ class CategoryController extends Controller
     {
         return view('categories/show', [
             'products'  => $category->products,
+            'category'  => $category,
         ]);
     }
 
