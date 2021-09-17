@@ -1,37 +1,43 @@
-@extends ('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid">
-<h1>Uitgelichte producten</h1>
-<div class="row">
-    @foreach ($featured as $feature)
-    <div class="col-4">
-        <div class="card">
-            <img src="{{url($feature->images->first()->img_path)}}" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">{{$feature->brand->name}} {{$feature->brand->line}} {{$feature->name}} </h5>
-            <a href="/products/{{$feature->slug}}">Details</a>
-            <p class="card-text">Price: &euro;{{$feature->price}} </p>
-            <p class="card-text">Tijdperiode: {{$feature->time_period->name}} </p>
-
-            <form action="">
-            <label for="quantity">Aantal: </label>
-            <input type="number" name="quantity" id="quantity" max="{{$feature->stock}}" >
-            <button type="submit" >In winkelwagen</button>
-            </form>
+<div class="homecontentsection wf-section">
+    <div class="homecontentcontainer w-container">
+        <div class="homecontenmain"><img src="images/Piet_Mondriaan_-_03.jpeg" loading="lazy"
+                sizes="(max-width: 479px) 90vw, 70vw"
+                srcset="images/Piet_Mondriaan_-_03-p-500.jpeg 500w, images/Piet_Mondriaan_-_03-p-800.jpeg 800w, images/Piet_Mondriaan_-_03-p-1080.jpeg 1080w, images/Piet_Mondriaan_-_03.jpeg 1131w"
+                alt="" class="image-4">
+            <div class="homecontenttitle">
+                <h1 class="heading-2 partone">Unique glasswork for </h1>
+                <h1 class="heading-2 parttwo">your home decoration.</h1>
             </div>
-         </div> 
-         </div>
-    @endforeach
- </div> 
+        </div>
+        <br>
+        <br>
+        <div class="div-block-87">
+            <h3 class="heading-19">Featured</h3>
+            <div class="w-layout-grid productpagegrid">
 
-<h2 class="mt-4">Categories</h2>
-@foreach ($categories as $category)
-    <button>
-    <a href="/categories/{{$category->name}}" class="h3" >{{$category->name}}</a>
-    </button>
-@endforeach
 
+                @foreach($featured as $feature)
+                    <div class="productcard">
+                        <div class="productimage"><img src="{{ url($feature->images->first()->img_path) }}"
+                                loading="lazy" sizes="(max-width: 479px) 90vw, (max-width: 767px) 67vw, 70vw"
+                                srcset="{{ url($feature->images->first()->img_path) }}, images/product-2.jpeg 972w"
+                                alt="" class="image-11"><img src="images/favorite.png" loading="lazy" width="41" alt=""
+                                class="image-13"></div>
+                        <div class="productinformation">
+                            <h4 class="productcardtitle">{{ $feature->brand->name }} {{ $feature->brand->line }}
+                                {{ $feature->name }}</h4>
+                            <div>Time period : </div>
+                            <h4 class="productcardtitle price">&euro;{{ $feature->price }}</h4>
+                            <div class="instock"></div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </div>
 </div>
-
 @endsection
