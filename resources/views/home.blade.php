@@ -23,13 +23,13 @@
                     <div class="productcard">
                         <div class="productimage"><img src="{{ url($feature->images->first()->img_path) }}"
                                 loading="lazy" sizes="(max-width: 479px) 90vw, (max-width: 767px) 67vw, 70vw"
-                                srcset="{{ url($feature->images->first()->img_path) }}, images/product-2.jpeg 972w"
+                                srcset="{{ url($feature->images->first()->img_path) }}, {{ url($feature->images->first()->img_path) }}"
                                 alt="" class="image-11"><img src="images/favorite.png" loading="lazy" width="41" alt=""
                                 class="image-13"></div>
                         <div class="productinformation">
                             <h4 class="productcardtitle">{{ $feature->brand->name }} {{ $feature->brand->line }}
                                 {{ $feature->name }}</h4>
-                            <div>Time period : </div>
+                            <div>Time period : {{$feature->time_period->name}} </div>
                             <h4 class="productcardtitle price">&euro;{{ $feature->price }}</h4>
                             <div class="instock"></div>
                         </div>
