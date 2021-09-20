@@ -6,8 +6,51 @@
   <div class="slugsection">
     <div class="slugcontainer">
 
-   
+    <div class="row">
+        <div class="col">
+     
+        @foreach($product->images as $product->image)
+                <img style="height:200px; width:auto;" src="{{ url($product->image->img_path) }}"
+                    onclick="openModal();currentSlide(1)" alt="..." class="img-thumbnail">
+                <!-- <img src="{{ url($product->image->img_path) }}" onclick="openModal();currentSlide(1)" class="hover-shadow"> -->
 
+            @endforeach
+
+
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                    @foreach($product->images as $key =>  $product->image)
+                        <span class="close cursor" onclick="closeModal()">&times;</span>
+                        <div class="mySlides">
+                            <div class="numbertext">{{ $key +1 }} / {{ count($product->images)}}</div>
+                            <img src="{{ url($product->image->img_path) }}" style="width:100%">
+                        </div>
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    @endforeach
+                </div>
+
+            </div>
+
+
+
+    </div>
+    <div id='productinfocol' class="col">
+    
+    <h4>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h4>
+    <h4>{{$product->time_period->name}}</h4>
+    <h4>Categorieën</h4>
+      @foreach($product->categories as $product->category)
+      <p>{{$product->category->name}}</p>
+      @endforeach
+    <h4>Prijs : &euro;{{$product->price}}</h4>
+    <a href="#" class="button-4 w-button">ADD TO CART</a>
+    </div>
+
+    </div>
   </div>
   </div>
 

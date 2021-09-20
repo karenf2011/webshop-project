@@ -571,7 +571,8 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
- 
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .no-gutters {
@@ -592,7 +593,8 @@ pre code {
 .col-auto, .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
   position: relative;
   width: 100%;
-  
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .col {
@@ -13808,9 +13810,7 @@ textarea.w-select {
 }
 
 .button-4 {
-  margin-top: 136px;
   background-color: #000;
-  font-family: Bitter, serif;
   font-weight: 700;
 }
 
@@ -16752,12 +16752,29 @@ img.hover-shadow {
 }
 
 .slugcontainer {
-  height: 70vh;
-  min-width: 70vw;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  background-color: #000;
+  height: 40vh;
 }
 
 .slugsection {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  height: auto;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+}
+
+#productinfocol {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: #999;
+  height: 50vh;
+  color: #000;
 }
