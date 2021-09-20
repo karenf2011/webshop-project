@@ -25,4 +25,7 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('products', ProductController::class, ['parameters' => ['products' => 'product:slug']]);
 Route::resource('categories', CategoryController::class, ['parameters' => ['categories' => 'category:name']]);
-Route::resource('cart', CartController::class);
+// Route::resource('cart', CartController::class);
+
+Route::get('cart', [CartController::class, 'index'])->name('cart');
+Route::post('cart', [CartController::class, 'store'])->name('cart');

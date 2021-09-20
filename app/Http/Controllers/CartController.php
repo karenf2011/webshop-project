@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -13,7 +16,16 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+       if (session::exists('cart')) {
+            $session = session::get('cart');
+        } else {
+            $session = session::put('cart', []);
+        }
+
+        return view('cart', [
+            'products'   => Product::all(),
+            'cart'      => $session,
+        ]);
     }
 
     /**
@@ -34,7 +46,23 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $session = session::get('cart');
+
+            $session[$request->product_id] = 1;
+
+            session::put('cart', $session);
+
+            return response()->json([
+                'success'   => true,
+                'message'   => $session,
+            ]);
+        } catch(Exception $e) {
+            return response()->json([
+                'success'   => false,
+                'message'   => $e->getMessage(),
+            ]);
+        }
     }
 
     /**
