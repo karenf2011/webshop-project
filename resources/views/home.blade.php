@@ -20,7 +20,8 @@
 
 
                 @foreach($featured as $feature)
-                    <div class="productcard">
+                <a href="/products/{{$feature->slug}}">
+                <div class="productcard">
                         <div class="productimage"><img src="{{ url($feature->images->first()->img_path) }}"
                                 loading="lazy" sizes="(max-width: 479px) 90vw, (max-width: 767px) 67vw, 70vw"
                                 srcset="{{ url($feature->images->first()->img_path) }}, {{ url($feature->images->first()->img_path) }}"
@@ -33,7 +34,8 @@
                             <h4 class="productcardtitle price">&euro;{{ $feature->price }}</h4>
                             <div class="instock"></div>
                         </div>
-                    </div>
+                </div>
+                </a>
                 @endforeach
 
             </div>

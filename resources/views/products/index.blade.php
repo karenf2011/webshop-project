@@ -44,6 +44,7 @@
         <div class="w-layout-grid productpagegrid">
 
             @foreach ($products as $product)
+            <a href="/products/{{$product->slug}}">
             <div class="productcard">
                 <div class="productimage">
                     <img src="{{url($product->images->first()->img_path)}}"
@@ -61,6 +62,7 @@
                     </div>
                 </div>
             </div>
+            </a>
             @endforeach
 
         </div>

@@ -1818,10 +1818,12 @@
   height: 5vh;
   max-width: 50vw;
   background-color: transparent;
+  
 }
 
 .form-2 {
   background-color: transparent;
+  
 }
 
 .text-field-3 {
@@ -1829,6 +1831,7 @@
   height: 5vh;
   margin-bottom: 0px;
   background-color: #ffffff;
+  
 }
 
 .text-field-3::-webkit-input-placeholder {

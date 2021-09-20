@@ -85,7 +85,7 @@
         <h1 id="footerlogo" class="logo">Glasswerk</h1>
         </a>
         <div>
-          <h2 class="footer-heading">Products</h2>
+        <a href="/products"><h2 class="footer-heading">Products</h2>
           <ul role="list" class="w-list-unstyled">
             <li>
               <a href="#" class="footer-link">Text Link</a>
