@@ -4992,3 +4992,8 @@
   grid-row-end: 2;
 }
 
+.cartsucces {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
