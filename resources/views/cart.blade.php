@@ -2,6 +2,14 @@
 
 @section('content')
 
+@foreach($products as $product)
+    @foreach($cart as $key => $cartitem)
+        @if($product->id === $key)
+        <h3>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h3>
+        @endif
+    @endforeach
+@endforeach
+
   <div class="wf-section">
     <div class="container-4 w-container">
       <div class="w-layout-grid grid-2">
