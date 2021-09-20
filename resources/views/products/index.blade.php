@@ -16,24 +16,29 @@
         }
         </style>
         </div>
-
-        <a href="#" class="link-block w-inline-block">
-            <h4 class="heading">KERAMIC</h4>
-        </a><a href="#" class="link-block w-inline-block">
-            <h4 class="heading">PRODUCTS</h4>
-        </a><a href="#" class="link-block w-inline-block">
-            <h4 class="heading">PRODUCTS</h4>
-        </a><a href="#" class="link-block w-inline-block">
-            <h4 class="heading">PRODUCTS</h4>
+        <a href="/products" class="link-block w-inline-block">
+            <h4 class="heading">ALLE PRODUCTEN</h4>
+        </a>
+        <a href="categories/glaswerk" class="link-block w-inline-block">
+            <h4 class="heading">GLASWERK</h4>
+        </a>
+        <a href="categories/keramiek" class="link-block w-inline-block">
+            <h4 class="heading">KERAMIEK</h4>
+        </a>
+        <a href="categories/servies" class="link-block w-inline-block">
+            <h4 class="heading">SERVIES</h4>
+        </a>
+        <a href="categories/sierobjecten" class="link-block w-inline-block">
+            <h4 class="heading">SIEROBJECTEN</h4>
         </a>
     </div>
     <div class="productpageheading">
-        <h4 class="heading productcategory">All products</h4>
+        <h4 class="heading productcategory">Alle producten</h4>
         <div class="div-block-51">
             <div data-hover="false" data-delay="0" class="w-dropdown">
                 <div class="dropdown-toggle-2 w-dropdown-toggle">
                     <div class="icon w-icon-dropdown-toggle"></div>
-                    <div class="text-block-10">Sort by</div>
+                    <div class="text-block-10">Sorteer op</div>
                 </div>
                 <nav class="dropdown-list w-dropdown-list"><a href="#" class="w-dropdown-link">Link 1</a><a href="#"
                         class="w-dropdown-link">Link 2</a><a href="#" class="w-dropdown-link">Link 3</a></nav>
