@@ -15,11 +15,9 @@
         <p>Tijdperiode: {{$product->time_period->name}} </p>
         <p>Voorraad: {{$product->stock}} </p>
 
-        <form action="">
         <label for="quantity">Aantal: </label>
         <input type="number" name="quantity" id="quantity" max="{{$product->stock}}" >
         <button type="submit" >In winkelwagen</button>
-        </form>
     </div>
    
  

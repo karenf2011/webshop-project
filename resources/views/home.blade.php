@@ -14,11 +14,11 @@
             <p class="card-text">Price: &euro;{{$feature->price}} </p>
             <p class="card-text">Tijdperiode: {{$feature->time_period->name}} </p>
 
-            <form action="">
+            
             <label for="quantity">Aantal: </label>
-            <input type="number" name="quantity" id="quantity" max="{{$feature->stock}}" >
-            <button type="submit" >In winkelwagen</button>
-            </form>
+            <input type="number" name="quantity" id="{{$feature->id}}" max="{{$feature->stock}}" >
+            <button p_id="{{$feature->id}}">In winkelwagen</button>
+            
             </div>
          </div> 
          </div>
@@ -27,11 +27,6 @@
 
 <h2 class="mt-4">Categories</h2>
 @foreach ($categories as $category)
-    <button>
     <a href="/categories/{{$category->name}}" class="h3" >{{$category->name}}</a>
-    </button>
 @endforeach
 
-</div>
-
-@endsection

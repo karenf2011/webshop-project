@@ -20,9 +20,11 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->decimal('price', 6, 2);
+            $table->integer('tax')->default(0);
             $table->integer('stock');
             $table->year('design_year')->nullable();
             $table->year('production_year')->nullable();
+            $table->text('extra_info')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->userstamps();
