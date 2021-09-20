@@ -14,7 +14,8 @@
   
   <link href="{{ asset('/images/favicon.ico') }}" rel="shortcut icon" type="/image/x-icon">
   <link href="{{ asset('/images/webclip.png') }}" rel="apple-touch-icon">
-  <link rel="stylesheet" href="css/app.css">
+  
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
   <style>
     a { text-decoration: none; 
@@ -82,9 +83,6 @@
     </div><img src="/images/magnifier.svg" loading="lazy" width="27" data-w-id="eb8485ed-8f1c-6c8f-5bae-751204e4765b" alt="" class="image-16">
   </div>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
 
   @yield('content')
 
@@ -135,7 +133,7 @@
       <div>Copyright © 2020 Glasswerk. All rights reserved.</div>
     </div>
   </footer>
-  <script src="js/app.js"></script>
+  <script src="{{asset('js/app.js')}}"></script>
   <!-- <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6135cf84ecf1c75fd670d1a1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
