@@ -15,6 +15,11 @@
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="{{ asset('/images/favicon.ico') }}" rel="shortcut icon" type="/image/x-icon">
   <link href="{{ asset('/images/webclip.png') }}" rel="apple-touch-icon">
+  <style>
+    a { text-decoration: none; 
+        color: inherit; 
+        cursor: pointer} 
+  </style>
 </head>
 <body class="body">
   <div class="navigationsection wf-section">
