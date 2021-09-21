@@ -27,8 +27,17 @@
                 </div>
           </div>
 
-        </div>
 
+       </div>
+
+
+
+    </div>
+    <div class="col">
+    <a href="#" class="button-4 w-button add-to-cart" p_id="{{$product->id}}">ADD TO CART</a>
+    </div>
+
+   
         <div class="sluginfo">
           <h3>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h3>
           <h4>{{$product->time_period->name}}</h4>
@@ -142,3 +151,26 @@
 
 </script>
 @endsection
+
+@push('scripts')
+<script>
+  $(document).on('click', '.add-to-cart', function(event) {
+    let product_id = $(this).attr('p_id');
+
+    axios({
+      method: 'POST',
+      url: '{{ route("cart") }}',
+      data: {
+        product_id: product_id,
+        quantity: 1,
+      }
+    }).then(function(response) {
+      if (response.data.success) {
+        console.log(response.data.message);
+      }
+    }).catch(function(error) {
+
+    })
+  })
+</script>
+@endpush
