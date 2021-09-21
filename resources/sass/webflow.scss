@@ -331,10 +331,10 @@ label {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
+  color: #000000;
   vertical-align: middle;
   background-color: #ffffff;
-  border: 1px solid #cccccc;
+  border: 1px solid #000000;
 }
 .w-input:-moz-placeholder,
 .w-select:-moz-placeholder {
@@ -355,7 +355,7 @@ label {
 }
 .w-input:focus,
 .w-select:focus {
-  border-color: #3898EC;
+  border-color: #000000;
   outline: 0;
 }
 .w-input[disabled],

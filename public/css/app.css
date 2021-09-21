@@ -10775,10 +10775,10 @@ label {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
+  color: #000000;
   vertical-align: middle;
   background-color: #ffffff;
-  border: 1px solid #cccccc;
+  border: 1px solid #000000;
 }
 
 .w-input:-moz-placeholder,
@@ -10804,7 +10804,7 @@ label {
 
 .w-input:focus,
 .w-select:focus {
-  border-color: #3898EC;
+  border-color: #000000;
   outline: 0;
 }
 
@@ -12579,7 +12579,6 @@ textarea.w-select {
 .w-checkbox-input {
   float: left;
   margin-bottom: 0px;
-  margin-left: -20px;
   margin-right: 0px;
   margin-top: 4px;
   line-height: normal;
@@ -12740,14 +12739,14 @@ textarea.w-select {
 
 .image {
   width: 30px;
-  height: 5vh;
+  height: 50px;
   margin-right: 0px;
   padding-right: 0px;
 }
 
 .image-2 {
   width: 30px;
-  height: 5vh;
+  height: 50px;
   margin-right: 25px;
 }
 
@@ -12771,7 +12770,7 @@ textarea.w-select {
 }
 
 .homecontentsection {
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-bottom: 10vh;
   background-color: #ffffff;
 }
@@ -12843,11 +12842,12 @@ textarea.w-select {
 
 .navicons {
   display: flex;
-  height: 5vh;
+  height: 50px;
 }
 
 .navicons.hamburger {
   margin-top: 22px;
+  margin-left: 25px;
 }
 
 .div-block-2 {
@@ -12983,7 +12983,7 @@ textarea.w-select {
 .button.registration {
   width: 100%;
   height: 45px;
-  background-color: #ffffff;
+  background-color: #000000;
   font-size: 16px;
   font-weight: 500;
 }
@@ -13221,6 +13221,7 @@ textarea.w-select {
   height: 100%;
   flex-direction: column;
   background-color: #ffffff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .page-container._2 {
@@ -13242,8 +13243,7 @@ textarea.w-select {
   max-width: 400px;
   margin-top: 0px;
   margin-bottom: 32px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  color: #fff;
+  color: black;
   font-size: 42px;
   line-height: 130%;
   font-weight: 500;
@@ -13253,9 +13253,10 @@ textarea.w-select {
   position: relative;
   display: flex;
   overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  width: auto;
+  height: 80vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 .feature-box {
@@ -13266,7 +13267,7 @@ textarea.w-select {
 
 .link-3 {
   margin-left: 3px;
-  color: #ffffff;
+  color: #000000;
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
@@ -13401,10 +13402,13 @@ textarea.w-select {
   display: flex;
   justify-content: center;
   border-style: none none solid;
-  border-width: 0px 0px 3px;
+  border-top: solid;
+  border-width: 3px 3px 3px;
   border-color: #000;
   border-radius: 0px;
   background-color: #ffffff;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 .grid {
@@ -13810,9 +13814,7 @@ textarea.w-select {
 }
 
 .button-4 {
-  margin-top: 136px;
   background-color: #000;
-  font-family: Bitter, serif;
   font-weight: 700;
 }
 
@@ -13916,15 +13918,20 @@ textarea.w-select {
 .form-block-3 {
   display: block;
   width: 100%;
-  height: 5vh;
+  height: 50px;
   margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: transparent;
 }
 
 .div-block-67 {
   display: flex;
   width: 30vw;
-  height: 5vh;
+  height: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   max-width: 50vw;
   background-color: transparent;
 }
@@ -13935,26 +13942,30 @@ textarea.w-select {
 
 .text-field-3 {
   display: block;
-  height: 5vh;
   margin-bottom: 0px;
   background-color: #ffffff;
 }
 
+*:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 .text-field-3:-ms-input-placeholder {
-  color: #636363;
+  color: #000000;
 }
 
 .text-field-3::-moz-placeholder {
-  color: #636363;
+  color: #000000;
 }
 
 .text-field-3::placeholder {
-  color: #636363;
+  color: #000000;
 }
 
 .image-16 {
   display: block;
-  height: 5vh;
+  height: 50px;
   margin-right: 0px;
   margin-left: 10px;
 }
@@ -14845,7 +14856,7 @@ textarea.w-select {
 }
 @media screen and (max-width: 991px) {
   .image {
-    height: 5vh;
+    height: 50px;
     margin-right: 40px;
   }
 
@@ -14855,7 +14866,7 @@ textarea.w-select {
 
   .image-2 {
     display: block;
-    height: 5vh;
+    height: 50px;
     margin-right: 20px;
   }
 
@@ -14896,9 +14907,8 @@ textarea.w-select {
 
   .navicons {
     display: flex;
-    height: 5vh;
+    height: 50px;
     min-width: 10vw;
-    margin-right: 21px;
     justify-content: space-between;
   }
 
@@ -15055,6 +15065,8 @@ textarea.w-select {
   .div-block-67 {
     width: 100%;
     height: 5vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
     max-width: 100%;
     min-width: auto;
     padding-right: 20px;
@@ -15265,7 +15277,7 @@ textarea.w-select {
 }
 @media screen and (max-width: 767px) {
   .navicons {
-    height: 5vh;
+    height: 50px;
     min-width: 13vw;
   }
 
@@ -15438,6 +15450,29 @@ textarea.w-select {
   }
 }
 @media screen and (max-width: 479px) {
+  .mobilesubmenu {
+    height: 5vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 10px;
+  }
+
+  .sluggrid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto;
+  }
+
+  .sluggridphotos {
+    padding-bottom: 20px !important;
+    padding-right: 0px !important;
+  }
+
+  .slugcontainer {
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
+  }
+
   .heading.productcategory {
     margin-top: 0px;
     margin-bottom: 20px;
@@ -15607,21 +15642,12 @@ textarea.w-select {
     font-weight: 500;
   }
 
-  .page-wrapper {
-    font-family: Bitter, serif;
-  }
-
   .link-3 {
-    font-family: Bitter, serif;
     white-space: nowrap;
   }
 
   .social-box {
     margin-bottom: 0%;
-  }
-
-  .checkbox-label {
-    font-family: Bitter, serif;
   }
 
   .body-2 {
@@ -16650,18 +16676,18 @@ textarea.w-select {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: #ffffff;
   margin: auto;
   padding: 0;
   width: 90%;
+  height: 100vh;
   max-width: 1200px;
 }
 
@@ -16754,12 +16780,63 @@ img.hover-shadow {
 }
 
 .slugcontainer {
-  height: 70vh;
-  min-width: 70vw;
+  margin-right: 15vw;
+  margin-left: 15vw;
+  height: auto;
 }
 
 .slugsection {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  height: auto;
+}
+
+.sluggrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.sluggridphotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding-right: 20px;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+}
+
+.sluginfo {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  height: 500px;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.mobilesubmenu::-webkit-scrollbar {
+  display: none;
+}
+
+.left {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
 }

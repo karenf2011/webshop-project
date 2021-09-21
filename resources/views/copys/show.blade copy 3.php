@@ -5,52 +5,53 @@
 
   <div class="slugsection">
     <div class="slugcontainer">
-      <div class="sluggrid">
-       
-        <div class="sluggridphotos">
-        @foreach ($product->images as $product->image)
-        <img src="{{url($product->image->img_path)}}" onclick="openModal();currentSlide(1)" target="_blank" data-action="lightbox-open" class="img-fluid" alt="Responsive image">
-        @endforeach
 
-          <div id="myModal" class="modal">
+    <div class="row">
+        <div class="col">
+     
+        @foreach($product->images as $product->image)
+                <img style="height:200px; width:auto;" src="{{ url($product->image->img_path) }}"
+                    onclick="openModal();currentSlide(1)" alt="..." class="img-thumbnail">
+                <!-- <img src="{{ url($product->image->img_path) }}" onclick="openModal();currentSlide(1)" class="hover-shadow"> -->
+
+            @endforeach
+
+
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+
                 <div class="modal-content">
                     @foreach($product->images as $key =>  $product->image)
                         <span class="close cursor" onclick="closeModal()">&times;</span>
                         <div class="mySlides">
                             <div class="numbertext">{{ $key +1 }} / {{ count($product->images)}}</div>
-                            <img src="{{ url($product->image->img_path) }}" style="width:70vw; height:90vh; background-color: rgba(0, 0, 0, .8); padding-bottom:100px; padding-right:180px;padding-left:180px;">
+                            <img src="{{ url($product->image->img_path) }}" style="width:100%">
                         </div>
                         <!-- Next/previous controls -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     @endforeach
                 </div>
-          </div>
 
-
-       </div>
+            </div>
 
 
 
     </div>
-    <div class="col">
-    <a href="#" class="button-4 w-button add-to-cart" p_id="{{$product->id}}">ADD TO CART</a>
+    <div id='productinfocol' class="col">
+    
+    <h4>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h4>
+    <h4>{{$product->time_period->name}}</h4>
+    <h4>Categorieën</h4>
+      @foreach($product->categories as $product->category)
+      <p>{{$product->category->name}}</p>
+      @endforeach
+    <h4>Prijs : &euro;{{$product->price}}</h4>
+    <a href="#" class="button-4 w-button">ADD TO CART</a>
     </div>
 
-   
-        <div class="sluginfo">
-          <h3>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h3>
-          <h4>{{$product->time_period->name}}</h4>
-          <h4>Categorieën</h4>
-          @foreach($product->categories as $product->category)
-          <p>{{$product->category->name}}</p>
-          @endforeach
-          <h4>Prijs : &euro;{{$product->price}}</h4>
-          <a href="#" class="button-4 w-button">ADD TO CART</a>
-        </div>
-
-      </div>
     </div>
+  </div>
   </div>
 
 <div class="section-2 wf-section">
@@ -143,7 +144,7 @@
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
-        } 
+        } console.log (slides);
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
         captionText.innerHTML = dots[slideIndex - 1].alt;
@@ -151,26 +152,3 @@
 
 </script>
 @endsection
-
-@push('scripts')
-<script>
-  $(document).on('click', '.add-to-cart', function(event) {
-    let product_id = $(this).attr('p_id');
-
-    axios({
-      method: 'POST',
-      url: '{{ route("cart") }}',
-      data: {
-        product_id: product_id,
-        quantity: 1,
-      }
-    }).then(function(response) {
-      if (response.data.success) {
-        console.log(response.data.message);
-      }
-    }).catch(function(error) {
-
-    })
-  })
-</script>
-@endpush
