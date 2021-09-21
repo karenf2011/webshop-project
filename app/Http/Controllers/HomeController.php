@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -24,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {        
+        if (session::exists('cart')) {
+            $session = session::get('cart');
+        } else {
+            $session = session::put('cart', []);
+        }
+
         return view('home', [
             'featured'      => Category::first()->products,
             'categories'    => Category::all()->whereNotin('id', 1),
