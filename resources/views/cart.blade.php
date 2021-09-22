@@ -5,6 +5,7 @@
   <div class="wf-section mt-5">
     <div class="container-4 w-container">
       <div class="w-layout-grid grid-2">
+        
         <div class="div-block-57">
           <div class="productdetails checkout">
           @foreach($products as $product)
@@ -24,7 +25,9 @@
           @endforeach
           </div>
         </div>
+
         <div class="productdetails part2">
+
           <div class="div-block-59">
             <div class="text-block-11">Total : </span><span class="text-span-3">€ {{ $total }}</span><br>‍<br>Delivery time: 3-5 days <br><br><br><br><br></div>
             <div class="div-block-60">
@@ -33,6 +36,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
