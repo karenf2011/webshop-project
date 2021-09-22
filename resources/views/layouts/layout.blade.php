@@ -78,7 +78,7 @@
                     data-w-id="1a14cda4-99b7-9f49-27ae-dd14b965f0d2" alt="" class="image-16 mobile">
             <div class="navicons"><img src="/images/user.svg" loading="lazy" width="50"
                     data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2">
-                <a href="#" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy" alt=""
+                <a href="/cart" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy" alt=""
                         class="image"></a>
             </div>
             <div data-hover="false" data-delay="0" class="dropdown-3 w-dropdown">

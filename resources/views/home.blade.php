@@ -27,7 +27,7 @@
                 alt="" class="image-4">
             <div class="homecontenttitle">
                 <h1 class="heading-2 partone">Uniek glasswerk voor </h1>
-                <h1 class="heading-2 parttwo">jouw thuis decoratie.</h1>
+                <h1 class="heading-2 parttwo">uw thuis decoratie.</h1>
             </div>
         </div>
         <br>
