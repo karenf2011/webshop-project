@@ -156,12 +156,12 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #1d68a7;
+ 
   text-decoration: underline;
 }
 
@@ -13222,13 +13222,11 @@ textarea.w-select {
   height: 100%;
   flex-direction: column;
   background-color: #ffffff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .page-container._2 {
   background-color: #fff;
-  border-style: solid;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .heading-5 {
@@ -13257,11 +13255,9 @@ textarea.w-select {
   display: flex;
   overflow: hidden;
   width: auto;
-  height: auto;
+  height: 80vh;
   margin-left: 15vw;
   margin-right: 15vw;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
 }
 
 .feature-box {
@@ -13343,14 +13339,13 @@ textarea.w-select {
   display: none;
   width: 300px;
   height: 300px;
-  margin-top: 55px;
+  margin-top: 6.5vh;
   margin-right: 10vw;
   justify-content: center;
   align-items: center;
   border-top: 3px solid #000;
   background-color: #ffffff;
   opacity: 1;
-  border-style: solid;
 }
 
 .div-block-43.shoppingcart {
@@ -13822,7 +13817,6 @@ textarea.w-select {
 
 .button-4 {
   background-color: #000;
-  color: white !important;
   font-weight: 700;
 }
 
@@ -15458,11 +15452,6 @@ textarea.w-select {
   }
 }
 @media screen and (max-width: 479px) {
-  .form-block-3 {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
   .page-wrapper {
     margin-left: 5vw;
     margin-right: 5vw;
@@ -15813,8 +15802,6 @@ textarea.w-select {
 
   .div-block-67 {
     display: none;
-    padding-top: 0;
-    padding-bottom: 0;
   }
 
   .div-block-67.mobile {

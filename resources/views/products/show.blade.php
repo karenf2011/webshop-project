@@ -37,7 +37,7 @@
           <p>{{$product->category->name}}</p>
           @endforeach
           <h4>Prijs : &euro;{{$product->price}}</h4>
-          <a href="#" class="button-4 w-button">ADD TO CART</a>
+          <a href="#" class="button-4 w-button">IN WINKELWAGEN</a>
         </div>
 
       </div>
@@ -47,7 +47,7 @@
 <div class="section-2 wf-section">
     <div class="container-6 related w-container">
         <div class="div-block-87">
-            <h3 class="heading-19">Related products</h3>
+            <h3 class="heading-19">Gerelateerde producten</h3>
             <div class="w-layout-grid productpagegrid">
                 <div class="productcard">
                     <div class="productimage"><img src="/images/product-2.jpeg" loading="lazy"
@@ -57,7 +57,7 @@
                         <img src="/images/favorite.png" loading="lazy" width="41" alt="" class="image-13"></div>
                     <div class="productinformation">
                         <h4 class="productcardtitle">Nike - Blue pot</h4>
-                        <div>Time period : 70&#x27;s<br><br></div>
+                        <div>Tijdsperiode : 70&#x27;s<br><br></div>
                         <h4 class="productcardtitle price">$ 39,99</h4>
                         <div class="instock"></div>
                     </div>

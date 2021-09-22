@@ -27,6 +27,17 @@ Route::resource('products', ProductController::class, ['parameters' => ['product
 Route::resource('categories', CategoryController::class, ['parameters' => ['categories' => 'category:name']]);
 Route::resource('cart', CartController::class);
 
+// USER
 Route::get('/user/signup', function () {
     return view('/user/registerpage');
+});
+
+Route::get('/user/login', function () {
+    return view('/user/loginpage');
+});
+
+// SUPPORT
+
+Route::get('/support', function () {
+    return view('/support/supportpage');
 });

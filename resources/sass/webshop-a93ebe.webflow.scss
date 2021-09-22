@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 * {
   font-family: 'Questrial', sans-serif !important;
+  
 }
 .w-layout-grid {
   display: -ms-grid;
@@ -454,6 +455,7 @@
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.5;
+  color: black !important;
 }
 
 .footer-link {
@@ -864,11 +866,14 @@
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: #ffffff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .page-container._2 {
   background-color: #fff;
+  border-style: solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
 }
 
 .heading-5 {
@@ -902,9 +907,11 @@
   display: flex;
   overflow: hidden;
   width: auto;
-  height: 80vh;
+  height: auto;
   margin-left: 15vw;
   margin-right: 15vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
 }
 
 .feature-box {
@@ -1012,7 +1019,7 @@
   display: none;
   width: 300px;
   height: 300px;
-  margin-top: 6.5vh;
+  margin-top: 55px;
   margin-right: 10vw;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -1025,6 +1032,7 @@
   border-top: 3px solid #000;
   background-color: #ffffff;
   opacity: 1;
+  border-style: solid;
 }
 
 .div-block-43.shoppingcart {
@@ -1430,6 +1438,7 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  color: black !important;
 }
 
 .productcardtitle {
@@ -1664,7 +1673,7 @@
 .button-4 {
   
   background-color: #000;
- 
+  color: white !important;
   font-weight: 700;
 }
 
@@ -1920,7 +1929,7 @@
   display: flex;
   width: auto;
   height: auto;
-  min-height: 75vh;
+  min-height: 60vh;
   min-width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -3753,6 +3762,16 @@
 }
 
 @media screen and (max-width: 479px) {
+  .form-block-3 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .page-wrapper {
+    
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
   .mobilesubmenu {
     height: 5vh;
     margin-left: 5vw;
@@ -4146,6 +4165,8 @@
 
   .div-block-67 {
     display: none;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .div-block-67.mobile {
@@ -4154,6 +4175,7 @@
     max-width: 76vw;
     padding-right: 0px;
     padding-left: 0px;
+    
   }
 
   .text-field-3 {
@@ -5218,15 +5240,17 @@ img.hover-shadow {
 }
 
 a {
-  text-decoration: none; 
-  color: inherit; 
+  text-decoration: none !important; 
+  outline: none;
   cursor: pointer;
+  
 }
 
 a:hover {
   text-decoration: none; 
-  color: inherit; 
   cursor: pointer;
+  outline: none !important;
+  
 }
 
 .mobilesubmenu::-webkit-scrollbar {

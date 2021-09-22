@@ -26,14 +26,14 @@
                 srcset="images/Piet_Mondriaan_-_03-p-500.jpeg 500w, images/Piet_Mondriaan_-_03-p-800.jpeg 800w, images/Piet_Mondriaan_-_03-p-1080.jpeg 1080w, images/Piet_Mondriaan_-_03.jpeg 1131w"
                 alt="" class="image-4">
             <div class="homecontenttitle">
-                <h1 class="heading-2 partone">Unique glasswork for </h1>
-                <h1 class="heading-2 parttwo">your home decoration.</h1>
+                <h1 class="heading-2 partone">Uniek glasswerk voor </h1>
+                <h1 class="heading-2 parttwo">jouw thuis decoratie.</h1>
             </div>
         </div>
         <br>
         <br>
         <div class="div-block-87">
-            <h3 class="heading-19">Featured</h3>
+            <h3 class="heading-19">Uitgelicht</h3>
             <div class="w-layout-grid productpagegrid">
 
 
@@ -48,7 +48,7 @@
                         <div class="productinformation">
                             <h4 class="productcardtitle">{{ $feature->brand->name }} {{ $feature->brand->line }}
                                 {{ $feature->name }}</h4>
-                            <div>Time period : {{$feature->time_period->name}} </div>
+                            <div>Tijdsperiode : {{$feature->time_period->name}} </div>
                             <h4 class="productcardtitle price">&euro;{{ $feature->price }}</h4>
                             <div class="instock"></div>
                         </div>
