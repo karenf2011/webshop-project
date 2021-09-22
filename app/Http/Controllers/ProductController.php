@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -59,8 +60,16 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        // dd(session('cart'));
+        if (session::exists('cart')) {
+            $session = session::get('cart');
+        } else {
+            $session = session::put('cart', []);
+        }
+
         return view('products/show', [
             'product'   => $product,
+            'cart'      => $session,
         ]);
     }
 
