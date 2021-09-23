@@ -13,10 +13,9 @@ class Brand extends Model
 
     protected $table = 'brands';
 
-
-    // protected $casts = {
-        // created_at = datetime() 
-    // }
+    protected $guarded = [
+        'id'
+    ];
 
     public function products()
     {

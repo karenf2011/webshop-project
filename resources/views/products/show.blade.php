@@ -43,15 +43,13 @@
             <h4>Prijs : &euro;{{ $product->price }}</h4>
             <a href="/cart" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO CART</a>
 
-            </div>
-
 
         </div>
 
       
 
     </div>
-</div>
+  </div>
 </div>
 
 <div class="section-2 wf-section">

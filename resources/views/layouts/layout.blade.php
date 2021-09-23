@@ -86,6 +86,7 @@
                     data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2">
                 <a href="/cart" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy"
                         alt="" class="image"></a>
+
             </div>
             <div data-hover="false" data-delay="0" class="dropdown-3 w-dropdown">
                 <div class="dropdown-toggle-5 w-dropdown-toggle"><img src="/images/meat.svg" loading="lazy" width="43"

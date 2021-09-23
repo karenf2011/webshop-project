@@ -7,18 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sqits\UserStamps\Concerns\HasUserStamps;
 
-class TimePeriod extends Model
+class Order extends Model
 {
     use HasFactory, HasUserStamps, SoftDeletes;
 
-    protected $table = 'time_periods';
+    protected $table = 'orders';
 
     protected $guarded = [
         'id'
     ];
 
-    public function products()
+    protected $with = ['orderProducts', 'user'];
+
+    public function orderProducts()
     {
-        return $this->hasMany(TimePeriod::class, 'time_period_id');
+        return $this->hasMany(OrderProducts::class, 'order_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
