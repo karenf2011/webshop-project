@@ -13339,7 +13339,7 @@ textarea.w-select {
   display: none;
   width: 300px;
   height: 300px;
-  margin-top: 55px;
+  margin-top: 30px;
   margin-right: 10vw;
   justify-content: center;
   align-items: center;
@@ -13929,9 +13929,8 @@ a {
 }
 
 .form-block-3 {
-  display: block;
+  display: block !important;
   width: 100%;
- 
   margin-bottom: 0px;
   margin-top: 0px;
   padding-top: 10px;
@@ -13945,10 +13944,10 @@ a {
   height: 50px;
   margin-top: 0px;
   margin-bottom: 0px;
-  max-width: 50vw;
-  background-color: transparent;
   justify-content: center;
   align-items: center;
+  max-width: 50vw;
+  background-color: transparent;
 }
 
 .form-2 {
@@ -13956,10 +13955,9 @@ a {
 }
 
 .text-field-3 {
-  display: block !important ;
+  display: block !important;
   margin-bottom: 0px;
   background-color: #ffffff;
- 
 }
 
 *:focus {
@@ -13982,7 +13980,6 @@ a {
 .image-16 {
   display: block;
   height: 50px;
-  width:30px;
   margin-right: 0px;
   margin-left: 10px;
 }
@@ -15083,7 +15080,6 @@ a {
 
   .div-block-67 {
     width: 100%;
-    height: 5vh;
     padding-top: 10px;
     padding-bottom: 10px;
     max-width: 100%;
@@ -15098,7 +15094,7 @@ a {
   .text-field-3 {
     display: none;
     width: 100%;
-    height: 50px;
+    height: 5vh;
   }
 
   .image-16 {
