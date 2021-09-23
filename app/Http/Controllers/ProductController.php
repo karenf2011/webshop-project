@@ -108,14 +108,13 @@ class ProductController extends Controller
         //
     }
 
-    public function search(Request $request, Product $product) 
+    public function search(Request $request) 
     {
         
-            $query = 'schaal'; // <-- Change the query for testing.
+            $query = $request->searchresults; 
 
             $products = Product::search($query)->get();
-        
-            
+
             return view('/search/search', [
                 
                 'products'   => $products,

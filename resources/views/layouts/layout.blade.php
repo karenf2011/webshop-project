@@ -42,34 +42,31 @@
             </a>
             <div class="div-block-67">
                 <div class="form-block-3 w-form">
-                    <!-- <form id="email-form-2" name="email-form-2" data-name="Email Form 2" class="form-2"><input
-                            type="email" class="text-field-3 w-input" maxlength="256" name="email-3" data-name="Email 3"
-                            placeholder="Zoek" id="email-3" required=""></form> -->
-                    <form method="GET" action="/search">
-                        {{ csrf_field() }}
-                        <div class="input-group">
-                        <input  class="form-control" placeholder="Zoek"> 
-                        </div>
-                    </form>                   
-
-
+                    <form id="email-form-2" class="form-2" method="GET" action="/search">
+                        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+                        <input type="text" class="text-field-3 w-input" maxlength="256" placeholder="Zoek"
+                            name="searchresults" id="email-3"></form>
                     <div class="w-form-done">
                         <div>Thank you! Your submission has been received!</div>
                     </div>
                     <div class="w-form-fail">
                         <div>Oops! Something went wrong while submitting the form.</div>
                     </div>
+                    
                 </div>
-                
+                <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
+                data-w-id="1a14cda4-99b7-9f49-27ae-dd14b965f0d2" alt="" class="image-16 mobile">
+
                 <div class="div-block-43">
                     <div class="form-block w-form">
                         <form id="email-form" name="email-form" data-name="Email Form"><label for="name-3">E-mailadres
-                                </label><input type="text" class="w-input" maxlength="256" name="name-2"
-                                data-name="Name 2" placeholder="" id="name-2"><label
-                                for="email-4">Wachtwoord</label><input type="email" class="w-input" maxlength="256"
-                                name="email-2" data-name="Email 2" placeholder="" id="email-2" required=""><input
-                                type="submit" value="Login" data-wait="Please wait..." class="submit-button w-button">
-                            <div class="div-block-44"><label for="email-4" style="text-decoration:none;"class="field-label-3">Nog geen gebruiker? </label>
+                            </label><input type="text" class="w-input" maxlength="256" name="name-2" data-name="Name 2"
+                                placeholder="" id="name-2"><label for="email-4">Wachtwoord</label><input type="email"
+                                class="w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder=""
+                                id="email-2" required=""><input type="submit" value="Login" data-wait="Please wait..."
+                                class="submit-button w-button">
+                            <div class="div-block-44"><label for="email-4" style="text-decoration:none;"
+                                    class="field-label-3">Nog geen gebruiker? </label>
                                 <a href="/user/signup" class="link-block-2 w-inline-block"><label for="email-4"
                                         class="field-label-3">Registreer hier</label></a>
                             </div>
@@ -83,12 +80,12 @@
                     </div>
                 </div>
             </div>
-            <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
-                    data-w-id="1a14cda4-99b7-9f49-27ae-dd14b965f0d2" alt="" class="image-16 mobile">
+            <!-- <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
+                data-w-id="1a14cda4-99b7-9f49-27ae-dd14b965f0d2" alt="" class="image-16 mobile"> -->
             <div class="navicons"><img src="/images/user.svg" loading="lazy" width="50"
                     data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2">
-                <a href="/cart" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy" alt=""
-                        class="image"></a>
+                <a href="/cart" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy"
+                        alt="" class="image"></a>
             </div>
             <div data-hover="false" data-delay="0" class="dropdown-3 w-dropdown">
                 <div class="dropdown-toggle-5 w-dropdown-toggle"><img src="/images/meat.svg" loading="lazy" width="43"
@@ -118,7 +115,7 @@
         <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
             data-w-id="eb8485ed-8f1c-6c8f-5bae-751204e4765b" alt="" class="image-16">
     </div>
-                        
+
 
     @yield('content')
 
@@ -132,25 +129,25 @@
                     <a href="/products">
                         <h2 class="footer-heading">Producten</h2>
                     </a>
-                        <ul role="list" class="w-list-unstyled">
-                            <li>
-                                <a href="/categories/glaswerk" class="footer-link">Glaswerk</a>
-                            </li>
-                            <li>
-                                <a href="/categories/keramiek" class="footer-link">Keramiek</a>
-                            </li>
-                            <li>
-                                <a href="/categories/servies" class="footer-link">Servies</a>
-                            </li>
-                            <li>
-                                <a href="/categories/sierobjecten" class="footer-link">Sier Objecten</a>
-                            </li>
+                    <ul role="list" class="w-list-unstyled">
+                        <li>
+                            <a href="/categories/glaswerk" class="footer-link">Glaswerk</a>
+                        </li>
+                        <li>
+                            <a href="/categories/keramiek" class="footer-link">Keramiek</a>
+                        </li>
+                        <li>
+                            <a href="/categories/servies" class="footer-link">Servies</a>
+                        </li>
+                        <li>
+                            <a href="/categories/sierobjecten" class="footer-link">Sier Objecten</a>
+                        </li>
 
-                        </ul>
+                    </ul>
                 </div>
                 <div>
                     <a href="/support">
-                            <h2 class="footer-heading">Klantenservice</h2>
+                        <h2 class="footer-heading">Klantenservice</h2>
                     </a>
                     <ul role="list" class="w-list-unstyled">
                         <li>
@@ -182,7 +179,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6135cf84ecf1c75fd670d1a1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
     <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-  @stack('scripts')
+    @stack('scripts')
 </body>
 
 </html>
