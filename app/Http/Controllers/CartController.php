@@ -16,22 +16,17 @@ class CartController extends Controller
      */
     public function index()
     {
-        // session::remove('cart');
-
        if (session::exists('cart')) {
             $session = session::get('cart');
             $sessionKeys = array_keys($session);
         } else {
             $session = session::put('cart', []);
         }
-
-        // dd(session('cart'));
-    //    dd($this->getTotal($session));
         
         return view('cart', [
             'products'  => Product::whereIn('id', $sessionKeys)->get(),
             'cart'      => $session,
-            'total'     => $this->getTotal($session),
+            'total'     => Product::getTotal($session),
         ]);
     }
 
@@ -87,7 +82,7 @@ class CartController extends Controller
                     'success'   => true,
                     'html'      => $html,
                     'message'   => $session,
-                    'total'     => $this->getTotal($session),
+                    'total'     => Product::getTotal($session),
                 ]);
             }  
         } catch(Exception $e) {
@@ -115,7 +110,7 @@ class CartController extends Controller
             return response()->json([
                 'success'   => true,
                 'message'   => $session,
-                'total'     => $this->getTotal($session),
+                'total'     => Product::getTotal($session),
             ]);
         } catch(Exception $e) {
             return response()->json([
@@ -123,17 +118,5 @@ class CartController extends Controller
                 'message'   => $e->getMessage(),
             ]);
         }
-    }
-
-    public function getTotal($session)
-    {
-        $total = 0;
-        foreach ($session as $product_id => $quantity) {
-            $product = Product::findOrFail($product_id);
-            $price = (double)$product->price;
-            $totalPrice = $price * $quantity;
-            $total += $totalPrice;
-        }
-        return $total;
     }
 }

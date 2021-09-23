@@ -14,33 +14,15 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'email',
-        'password',
+    protected $guarded = [
+        'id'
     ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
+    
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -53,5 +35,10 @@ class User extends Authenticatable
     public function addresses()
     {
         return $this->hasMany(Address::class, 'user_id');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id');
     }
 }

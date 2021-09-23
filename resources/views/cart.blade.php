@@ -28,7 +28,7 @@
           <div class="div-block-59">
             <div class="text-block-11">Total : </span><span class="text-span-3">€ {{ $total }}</span><br>‍<br>Delivery time: 3-5 days <br><br><br><br><br></div>
             <div class="div-block-60">
-              <a href="#" class="button-4 w-button">CHECKOUT</a>
+              <a href="{{ route('orders.create')}}" class="button-4 w-button">CHECKOUT</a>
               <div class="div-block-64"><img src="images/ideal-logo.svg" loading="lazy" width="84" alt="" class="image-15"><img src="images/PayPal-Logo-PNG4.png" loading="lazy" width="111" sizes="(max-width: 479px) 111px, (max-width: 767px) 14vw, (max-width: 991px) 13vw, 111px" srcset="images/PayPal-Logo-PNG4-p-500.png 500w, images/PayPal-Logo-PNG4-p-800.png 800w, images/PayPal-Logo-PNG4-p-1080.png 1080w, images/PayPal-Logo-PNG4.png 5000w" alt=""></div>
             </div>
           </div>
@@ -49,7 +49,7 @@
     
     axios({
       method: 'POST',
-      url: '{{ route("cart-item-update") }}',
+      url: '{{ route("cart.item.update") }}',
       data: {
         product_id: product_id,
         quantity: quantity,
@@ -71,7 +71,7 @@
 
     axios({
       method: 'POST',
-      url: '{{ route("cart-item-delete") }}',
+      url: '{{ route("cart.item.delete") }}',
       data: {
         product_id: product_id,
       }

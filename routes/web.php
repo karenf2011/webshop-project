@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -28,8 +29,10 @@ Route::resource('categories', CategoryController::class, ['parameters' => ['cate
 
 Route::get('cart', [CartController::class, 'index'])->name('cart');
 Route::post('cart', [CartController::class, 'store'])->name('cart');
-Route::post('cart/update', [CartController::class, 'update'])->name('cart-item-update');
-Route::post('cart/delete', [CartController::class, 'delete'])->name('cart-item-delete');
+Route::post('cart/update', [CartController::class, 'update'])->name('cart.item.update');
+Route::post('cart/delete', [CartController::class, 'delete'])->name('cart.item.delete');
+
+Route::resource('orders', OrderController::class);
 
 Route::get('/user/signup', function () {
     return view('/user/registerpage');
