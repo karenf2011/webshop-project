@@ -17,10 +17,12 @@
                     <div class="modal-content">
                         @foreach($product->images as $key =>  $product->image)
                             <span class="close cursor" onclick="closeModal()">&times;</span>
-                            <div class="mySlides">
+                            <div style="background-color: rgba(0, 0, 0, .8);" class="mySlides">
                                 <div class="numbertext">{{ $key +1 }} / {{ count($product->images) }}</div>
-                                <img src="{{ url($product->image->img_path) }}"
-                                    style="width:70vw; height:90vh; background-color: rgba(0, 0, 0, .8); padding-bottom:100px; padding-right:180px;padding-left:180px;">
+                                <div  class="modalimage">
+                                    <img src="{{ url($product->image->img_path) }}"
+                                    style="width:100vw; height:90vh; padding-bottom:50px; padding-top:50px; padding-right:180px;padding-left:180px;">
+                                </div>
                             </div>
                             <!-- Next/previous controls -->
                             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -112,7 +114,7 @@
         document.getElementById("myModal").style.display = "none";
     }
 
-    var slideIndex = 1;
+    let slideIndex = 1;
     // showSlides(slideIndex);
 
     // Next/previous controls
@@ -127,10 +129,10 @@
     }
 
     function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
         if (n > slides.length) {
             slideIndex = 1
         }

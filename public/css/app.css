@@ -13836,6 +13836,7 @@ textarea.w-select {
 
 .div-block-61 {
   width: 15vw;
+  height: 150px;
 }
 
 .div-block-62 {
@@ -13843,8 +13844,13 @@ textarea.w-select {
   width: 33%;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   font-weight: 700;
   text-align: center;
+}
+
+a {
+  color: black !important;
 }
 
 .div-block-63 {
@@ -14575,7 +14581,8 @@ textarea.w-select {
 }
 
 .supportcontainer {
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-top: 70px;
   margin-bottom: 70px;
 }
@@ -16863,4 +16870,12 @@ a:hover {
 .left {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
+}
+
+#cartimage {
+  height: 150px;
+}
+
+.delete {
+  max-width: 100px;
 }

@@ -10,16 +10,23 @@
           <div class="productdetails checkout">
           @foreach($products as $product)
               <div class="productcard checkout" id="{{$product->id}}">
-                <div class="div-block-61"><img src="{{ url($product->images->first()->img_path) }}" loading="lazy" sizes="(max-width: 479px) 50vw, (max-width: 767px) 26vw, 15vw" srcset="{{ url($product->images->first()->img_path) }} 800w, {{ url($product->images->first()->img_path) }} 972w" alt="" class="image-14"></div>
+                <div class="div-block-61">
+                <a href="/products/{{$product->slug}}">
+                  <img id='cartimage' src="{{ url($product->images->first()->img_path) }}" class="img-fluid" alt="Responsive image">
+                </a>
+                </div>
                 <div class="div-block-62">
-                  <div>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</div>
-                  <button class="delete" p_id="{{$product->id}}">Verwijderen</button>
+                  <a href="/products/{{$product->slug}}">
+                    <div>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</div>
+                  </a>
+                  
                   <div class="text-block-13">€ {{$product->price}} p.s.</div>
                   <div class="div-block-65">
                     <a class="button-5 w-button adjust-quantity" p_id="{{$product->id}}" quantity="{{$cart[$product->id]}}" value="-">-</a>
                     <a class="button-6 w-button">{{$cart[$product->id]}}</a>
                     <a class="button-7 w-button adjust-quantity" p_id="{{$product->id}}" quantity="{{$cart[$product->id]}}" value="+">+</a>
                   </div>
+                  <button class="delete" p_id="{{$product->id}}">Verwijderen</button>
                 </div>
               </div>
           @endforeach

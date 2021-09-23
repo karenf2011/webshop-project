@@ -1205,7 +1205,7 @@
   right: 0%;
   bottom: 0%;
   
-  
+
 }
 
 .dropdown-toggle-2 {
@@ -1692,6 +1692,7 @@
 
 .div-block-61 {
   width: 15vw;
+  height: 150px;
 }
 
 .div-block-62 {
@@ -1707,12 +1708,16 @@
   flex-direction: column;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
+  -ms-flex-pack: space-between;
   justify-content: space-between;
+  align-items: center;
   font-weight: 700;
   text-align: center;
+ 
 }
-
+a {
+  color:black !important;
+}
 .div-block-63 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2656,7 +2661,8 @@
 }
 
 .supportcontainer {
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-top: 70px;
   margin-bottom: 70px;
 }
@@ -5266,4 +5272,12 @@ a:hover {
 .left {
   -ms-overflow-style: none; 
   overflow: -moz-scrollbars-none; 
+}
+
+#cartimage {
+  height: 150px;
+}
+
+.delete {
+  max-width: 100px;
 }
