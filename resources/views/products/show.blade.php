@@ -30,14 +30,6 @@
 
        </div>
 
-
-
-    </div>
-    <div class="col">
-    <a href="#" class="button-4 w-button add-to-cart" p_id="{{$product->id}}">ADD TO CART</a>
-    </div>
-
-   
         <div class="sluginfo">
           <h3>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h3>
           <h4>{{$product->time_period->name}}</h4>
@@ -46,7 +38,7 @@
           <p>{{$product->category->name}}</p>
           @endforeach
           <h4>Prijs : &euro;{{$product->price}}</h4>
-          <a href="#" class="button-4 w-button">ADD TO CART</a>
+          <a href="#" class="button-4 w-button add-to-cart" p_id="{{$product->id}}">ADD TO CART</a>
         </div>
 
       </div>

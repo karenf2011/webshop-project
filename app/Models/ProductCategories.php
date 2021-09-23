@@ -12,4 +12,8 @@ class ProductCategories extends Model
     use HasFactory, HasUserStamps, SoftDeletes;
 
     protected $table = 'product_categories';
+
+    protected $guarded = [
+        'id'
+    ];
 }
