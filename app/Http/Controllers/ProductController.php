@@ -31,6 +31,7 @@ class ProductController extends Controller
 
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -106,4 +107,19 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function search(Request $request) 
+    {
+        
+            $query = $request->searchresults; 
+
+            $products = Product::search($query)->get();
+
+            return view('/search/search', [
+                
+                'products'   => $products,
+                
+            ]);
+    }
+    
 }

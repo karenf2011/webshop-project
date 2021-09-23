@@ -10979,12 +10979,6 @@ textarea.w-select {
   height: 20px;
 }
 
-.w-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 940px;
-}
-
 .w-container:before,
 .w-container:after {
   content: " ";
@@ -11718,6 +11712,7 @@ textarea.w-select {
   background: #dddddd;
   display: none;
   min-width: 100%;
+  border-style: solid;
 }
 
 .w-dropdown-list.w--open {
@@ -12776,7 +12771,8 @@ textarea.w-select {
 }
 
 .homecontentcontainer {
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 .homecontenmain {
@@ -12833,7 +12829,7 @@ textarea.w-select {
 
 .homecontenttitle {
   position: relative;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: black;
 }
 
 .loginblock {
@@ -12933,6 +12929,7 @@ textarea.w-select {
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.5;
+  color: black !important;
 }
 
 .footer-link {
@@ -12947,7 +12944,8 @@ textarea.w-select {
 }
 
 .container-3 {
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 .section {
@@ -13221,11 +13219,12 @@ textarea.w-select {
   height: 100%;
   flex-direction: column;
   background-color: #ffffff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .page-container._2 {
-  background-color: #fff;
+  border-style: solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .heading-5 {
@@ -13254,9 +13253,11 @@ textarea.w-select {
   display: flex;
   overflow: hidden;
   width: auto;
-  height: 80vh;
+  height: auto;
   margin-left: 15vw;
   margin-right: 15vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
 }
 
 .feature-box {
@@ -13338,13 +13339,14 @@ textarea.w-select {
   display: none;
   width: 300px;
   height: 300px;
-  margin-top: 6.5vh;
+  margin-top: 340px;
   margin-right: 10vw;
   justify-content: center;
   align-items: center;
   border-top: 3px solid #000;
   background-color: #ffffff;
   opacity: 1;
+  border-style: solid;
 }
 
 .div-block-43.shoppingcart {
@@ -13389,7 +13391,8 @@ textarea.w-select {
 }
 
 .productcontainer {
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   border: 1px none #000;
 }
 
@@ -13502,7 +13505,8 @@ textarea.w-select {
   position: relative;
   display: block;
   height: auto;
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-bottom: 20vh;
   justify-content: center;
   align-items: center;
@@ -13631,6 +13635,7 @@ textarea.w-select {
 .productcard {
   display: flex;
   width: auto;
+  min-width: 100%;
   height: auto;
   flex-direction: column;
   justify-content: space-between;
@@ -13671,6 +13676,7 @@ textarea.w-select {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  color: black !important;
 }
 
 .productcardtitle {
@@ -13718,9 +13724,9 @@ textarea.w-select {
 }
 
 .grid-2 {
-  display: flex;
+  display: -ms-flexbox;
+  display: grid;
   justify-content: center;
-  align-items: center;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
   margin-top: 20px;
@@ -13729,15 +13735,14 @@ textarea.w-select {
 .div-block-57 {
   position: relative;
   display: flex;
-  height: 70vh;
+  height: auto;
   min-width: 30vw;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
 }
 
 .productdetails {
   display: flex;
-  width: 25vw;
   height: 57vh;
   justify-content: center;
   align-items: flex-start;
@@ -13748,16 +13753,16 @@ textarea.w-select {
 }
 
 .productdetails.part2 {
-  position: absolute;
   left: auto;
   top: 0%;
   right: 0%;
   bottom: 0%;
   display: flex;
-  height: 57vh;
+  min-height: 60vh;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .productdetails.checkout {
@@ -13765,7 +13770,6 @@ textarea.w-select {
   height: auto;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   border-style: none;
 }
 
@@ -13789,9 +13793,9 @@ textarea.w-select {
   display: flex;
   width: 20vw;
   height: 100%;
-  padding-top: 29px;
   flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -13808,13 +13812,16 @@ textarea.w-select {
 
 .div-block-60 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
 .button-4 {
+  margin-left: 20px;
+  min-width: 160px;
   background-color: #000;
+  color: white !important;
   font-weight: 700;
 }
 
@@ -13829,6 +13836,7 @@ textarea.w-select {
 
 .div-block-61 {
   width: 15vw;
+  height: 150px;
 }
 
 .div-block-62 {
@@ -13836,8 +13844,13 @@ textarea.w-select {
   width: 33%;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   font-weight: 700;
   text-align: center;
+}
+
+a {
+  color: black !important;
 }
 
 .div-block-63 {
@@ -13916,9 +13929,8 @@ textarea.w-select {
 }
 
 .form-block-3 {
-  display: block;
+  display: block !important;
   width: 100%;
-  height: 50px;
   margin-bottom: 0px;
   margin-top: 0px;
   padding-top: 10px;
@@ -13932,6 +13944,8 @@ textarea.w-select {
   height: 50px;
   margin-top: 0px;
   margin-bottom: 0px;
+  justify-content: center;
+  align-items: center;
   max-width: 50vw;
   background-color: transparent;
 }
@@ -13941,7 +13955,7 @@ textarea.w-select {
 }
 
 .text-field-3 {
-  display: block;
+  display: block !important;
   margin-bottom: 0px;
   background-color: #ffffff;
 }
@@ -13971,7 +13985,7 @@ textarea.w-select {
 }
 
 .image-16.home {
-  display: none;
+  display: block;
 }
 
 .image-16.mobile {
@@ -13990,8 +14004,8 @@ textarea.w-select {
 .usercontainer {
   display: flex;
   height: auto;
-  max-width: 70vw;
-  margin-top: 60px;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-bottom: 60px;
   justify-content: center;
   align-items: center;
@@ -14002,7 +14016,7 @@ textarea.w-select {
   display: flex;
   width: auto;
   height: auto;
-  min-height: 75vh;
+  min-height: 60vh;
   min-width: 100%;
   flex-direction: row;
   justify-content: center;
@@ -14568,7 +14582,8 @@ textarea.w-select {
 }
 
 .supportcontainer {
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-top: 70px;
   margin-bottom: 70px;
 }
@@ -14768,7 +14783,8 @@ textarea.w-select {
 }
 
 .container-6 {
-  max-width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 .section-2 {
@@ -15064,7 +15080,6 @@ textarea.w-select {
 
   .div-block-67 {
     width: 100%;
-    height: 5vh;
     padding-top: 10px;
     padding-bottom: 10px;
     max-width: 100%;
@@ -15090,7 +15105,7 @@ textarea.w-select {
   }
 
   .image-16.home {
-    display: none;
+    display: block;
   }
 
   .image-16.mobile {
@@ -15376,7 +15391,7 @@ textarea.w-select {
 
   .div-block-57 {
     position: relative;
-    height: 70vh;
+    height: auto;
     flex-direction: row;
     justify-content: center;
   }
@@ -15450,6 +15465,20 @@ textarea.w-select {
   }
 }
 @media screen and (max-width: 479px) {
+  .form-block-3 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .page-wrapper {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+  .image-16.mobile {
+    display: none;
+  }
+
   .mobilesubmenu {
     height: 5vh;
     margin-left: 5vw;
@@ -15775,10 +15804,10 @@ textarea.w-select {
 
   .div-block-59 {
     width: 85vw;
-    height: 25vh;
+    min-height: 25vh;
     margin-top: 0px;
     padding-top: 0px;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .text-block-11 {
@@ -15795,6 +15824,8 @@ textarea.w-select {
 
   .div-block-67 {
     display: none;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .div-block-67.mobile {
@@ -16671,8 +16702,7 @@ textarea.w-select {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
-  padding-top: 100px;
+  z-index: 9999999999;
   left: 0;
   top: 0;
   width: 100%;
@@ -16821,15 +16851,15 @@ img.hover-shadow {
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none !important;
+  outline: none;
   cursor: pointer;
 }
 
 a:hover {
   text-decoration: none;
-  color: inherit;
   cursor: pointer;
+  outline: none !important;
 }
 
 .mobilesubmenu::-webkit-scrollbar {
@@ -16839,4 +16869,12 @@ a:hover {
 .left {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
+}
+
+#cartimage {
+  height: 150px;
+}
+
+.delete {
+  max-width: 100px;
 }

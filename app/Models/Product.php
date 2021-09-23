@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sqits\UserStamps\Concerns\HasUserStamps;
 
+use Laravel\Scout\Searchable;
+
 class Product extends Model
 {
-    use HasFactory, HasUserStamps, SoftDeletes;
+    use HasFactory, HasUserStamps, SoftDeletes, Searchable;
 
     protected $table = 'products';
 
@@ -18,7 +20,12 @@ class Product extends Model
     ];
 
     protected $with = ['brand', 'categories', 'time_period', 'images'];
-
+    
+    public function searchableAs()
+    {
+        return 'posts_index';
+    }
+    
     public function brand()
     {
         return $this->belongsTo(Brand::class, 'brand_id');
