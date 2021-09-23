@@ -42,9 +42,17 @@
             </a>
             <div class="div-block-67">
                 <div class="form-block-3 w-form">
-                    <form id="email-form-2" name="email-form-2" data-name="Email Form 2" class="form-2"><input
+                    <!-- <form id="email-form-2" name="email-form-2" data-name="Email Form 2" class="form-2"><input
                             type="email" class="text-field-3 w-input" maxlength="256" name="email-3" data-name="Email 3"
-                            placeholder="Zoek" id="email-3" required=""></form>
+                            placeholder="Zoek" id="email-3" required=""></form> -->
+                    <form method="GET" action="/search">
+                        {{ csrf_field() }}
+                        <div class="input-group">
+                        <input  class="form-control" placeholder="Zoek"> 
+                        </div>
+                    </form>                   
+
+
                     <div class="w-form-done">
                         <div>Thank you! Your submission has been received!</div>
                     </div>
@@ -52,6 +60,7 @@
                         <div>Oops! Something went wrong while submitting the form.</div>
                     </div>
                 </div>
+                
                 <div class="div-block-43">
                     <div class="form-block w-form">
                         <form id="email-form" name="email-form" data-name="Email Form"><label for="name-3">E-mailadres
@@ -109,7 +118,7 @@
         <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
             data-w-id="eb8485ed-8f1c-6c8f-5bae-751204e4765b" alt="" class="image-16">
     </div>
-
+                        
 
     @yield('content')
 

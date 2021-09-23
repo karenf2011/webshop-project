@@ -46,7 +46,7 @@
             </div>
             <div class="div-block-41">
               <div class="text-block-8">Heb je al een account? </div>
-              <a href="#" class="link-3">Log hier in</a>
+              <a href="/user/login" class="link-3">Log hier in</a>
             </div>
           </div>
         </div>

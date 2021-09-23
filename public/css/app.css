@@ -14003,8 +14003,8 @@ a {
 .usercontainer {
   display: flex;
   height: auto;
-  max-width: 70vw;
-  margin-top: 60px;
+  margin-left: 15vw;
+  margin-right: 15vw;
   margin-bottom: 60px;
   justify-content: center;
   align-items: center;

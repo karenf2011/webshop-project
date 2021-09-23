@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,11 @@ use App\Http\Controllers\ProductController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
+// SEARCH
+
+Route::get('/search', [ProductController::class, 'search'])->name('search');
+Route::post('/search', [ProductController::class, 'search'])->name('search');
+ 
 // Auth::routes();
 
 Route::resource('products', ProductController::class, ['parameters' => ['products' => 'product:slug']]);
@@ -45,3 +51,4 @@ Route::get('/user/login', function () {
 Route::get('/support', function () {
     return view('/support/supportpage');
 });
+
