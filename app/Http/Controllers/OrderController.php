@@ -37,7 +37,7 @@ class OrderController extends Controller
             $session = session::put('cart', []);
         }
 
-        return view('orders/form', [
+        return view('orders.form', [
             'products'  => Product::whereIn('id', $sessionKeys)->get(),
             'cart'      => $session,
             'total'     => Product::getTotal($session),
@@ -107,7 +107,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('orders/details', [
+        return view('orders.details', [
             'order'     => $order,
 
         ]);

@@ -61,7 +61,7 @@
     
     axios({
       method: 'POST',
-      url: '{{ route("cart.item.update") }}',
+      url: '{{ route("cart.update") }}',
       data: {
         product_id: product_id,
         quantity: quantity,
@@ -83,7 +83,7 @@
 
     axios({
       method: 'POST',
-      url: '{{ route("cart.item.delete") }}',
+      url: '{{ route("cart.delete") }}',
       data: {
         product_id: product_id,
       }

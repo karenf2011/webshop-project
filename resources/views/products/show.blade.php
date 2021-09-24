@@ -141,7 +141,7 @@
 
             axios({
                 method: 'POST',
-                url: '{{ route("cart") }}',
+                url: '{{ route("cart.store") }}',
                 data: {
                     product_id: product_id,
                     quantity: 1,
