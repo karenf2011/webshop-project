@@ -46,7 +46,7 @@
         </div>
 
         <div class="checkoutitems">
-            <h4>Bestelling</h4>
+            <h4 id="bestelling">Bestelling</h4>
             <ul>
                 @foreach($products as $product)
                 <li id="{{$product->id}}">

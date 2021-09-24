@@ -3,35 +3,7 @@
 @section('content')
 
 <div class="productsection wf-section">
-    <div class="mobilesubmenu">
-
-        <div class="w-embed">
-        <style>
-        .mobilesubmenu::-webkit-scrollbar {
-            display: none; 
-        }
-        .left {
-            -ms-overflow-style: none; 
-            overflow: -moz-scrollbars-none; 
-        }
-        </style>
-        </div>
-        <a href="/products" class="link-block w-inline-block">
-            <h4 class="heading">ALLE PRODUCTEN</h4>
-        </a>
-        <a href="/categories/glaswerk" class="link-block w-inline-block">
-            <h4 class="heading">GLASWERK</h4>
-        </a>
-        <a href="/categories/keramiek" class="link-block w-inline-block">
-            <h4 class="heading">KERAMIEK</h4>
-        </a>
-        <a href="/categories/servies" class="link-block w-inline-block">
-            <h4 class="heading">SERVIES</h4>
-        </a>
-        <a href="/categories/sierobjecten" class="link-block w-inline-block">
-            <h4 class="heading">SIEROBJECTEN</h4>
-        </a>
-    </div>
+    
     <div class="productpageheading">
         <h4 class="heading productcategory">{{$category->name}}</h4>
         

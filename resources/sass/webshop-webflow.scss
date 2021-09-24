@@ -5134,7 +5134,7 @@ img.hover-shadow {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
   height: 500px;
   color: #000;
 }
@@ -5225,4 +5225,8 @@ a:hover {
 }
 #checkouttotal {
   margin-top: 40px;
+}
+
+#bestelling {
+  margin-bottom: 40px;
 }
