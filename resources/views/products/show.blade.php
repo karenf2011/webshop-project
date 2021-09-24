@@ -20,8 +20,9 @@
                             <div style="background-color: rgba(0, 0, 0, .8);" class="mySlides">
                                 <div class="numbertext">{{ $key +1 }} / {{ count($product->images) }}</div>
                                 <div  class="modalimage">
-                                    <img src="{{ url($product->image->img_path) }}"
-                                    style="width:100vw; height:100vh; padding-bottom:50px; padding-top:50px;padding-right:25vw;padding-left:25vw;">
+                                    <!-- <img src="{{ url($product->image->img_path) }}"
+                                    style="width:100vw; height:100vh; padding-bottom:50px; padding-top:50px;padding-right:25vw;padding-left:25vw;"> -->
+                                    <img src="{{ url($product->image->img_path) }}" class="img-fluid" alt="Responsive image">
                                 </div>
                             </div>
                             <!-- Next/previous controls -->

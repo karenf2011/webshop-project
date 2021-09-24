@@ -2,6 +2,16 @@
 
 @section('content')
 <div class="mobilesubmenu">
+<div class="w-embed">
+        <style>
+        .mobilesubmenu::-webkit-scrollbar {
+            display: none; 
+        
+            -ms-overflow-style: none; 
+            overflow: -moz-scrollbars-none; 
+        }
+        </style>
+        </div>
         <a href="/products" class="link-block w-inline-block">
             <h4 class="heading">ALLE PRODUCTEN</h4>
         </a>
