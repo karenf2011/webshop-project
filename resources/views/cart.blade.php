@@ -5,19 +5,18 @@
 <div class="wf-section mt-5">
     <div class="container-4 w-container">
         <div class="w-layout-grid grid-2">
-
             <div class="div-block-57">
                 <div class="productdetails checkout">
                     @foreach($products as $product)
                         <div class="productcard checkout" id="{{ $product->id }}">
                             <div class="div-block-61">
-                                <a href="/products/{{ $product->slug }}">
+                                <a href="{{ route ('products.show', $product) }}">
                                     <img id='cartimage' src="{{ url($product->images->first()->img_path) }}"
                                         class="img-fluid" alt="Responsive image">
                                 </a>
                             </div>
                             <div class="div-block-62">
-                                <a href="/products/{{ $product->slug }}">
+                                <a href="{{ route ('products.show', $product) }}">
                                     <div>{{ $product->brand->name }} {{ $product->brand->line }}
                                         {{ $product->name }}</div>
                                 </a>
@@ -63,6 +62,7 @@
 
 @push('scripts')
     <script>
+        // UPDATE FUNCTION
         $(document).on('click', '.adjust-quantity', function (event) {
             let product_id = $(this).attr('p_id');
             let quantity = $(this).attr('quantity');
@@ -71,7 +71,7 @@
 
             axios({
                 method: 'POST',
-                url: '{{ route("cart.item.update") }}',
+                url: '{{ route("cart.update") }}',
                 data: {
                     product_id: product_id,
                     quantity: quantity,
@@ -82,17 +82,17 @@
                     $('#' + product_id).find('.div-block-65').html(response.data.html).replace()
                 }
             }).catch(function (error) {
-
+            
             })
         })
 		
-		//DELETE FUNCTION
+		    //DELETE FUNCTION
         $(document).on('click', '.delete', function (event) {
             let product_id = $(this).attr('p_id');
 
             axios({
                 method: 'POST',
-                url: '{{ route("cart.item.delete") }}',
+                url: '{{ route("cart.delete") }}',
                 data: {
                     product_id: product_id,
                 }
@@ -102,6 +102,7 @@
                     $('.productcard.checkout#' + product_id).remove()
                 }
             }).catch(function (error) {
+
 
             })
         })

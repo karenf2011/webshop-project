@@ -107,7 +107,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('orders/details', [
+        return view('orders.details', [
             'order'     => $order,
 
         ]);

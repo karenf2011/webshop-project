@@ -37,22 +37,20 @@
         <div class="w-layout-grid productpagegrid">
 
             @foreach ($products as $product)
-            <a href="/products/{{$product->slug}}">
+            <a href="{{ route ('products.show', $product) }}">
             <div class="productcard">
                 <div class="productimage">
-                    <img src="{{url($product->images->first()->img_path)}}"
+                    <img src="{{ url($product->images->first()->img_path) }}"
                         loading="lazy" sizes="(max-width: 479px) 89vw, (max-width: 767px) 67vw, 70vw"
-                        srcset="{{url($product->images->first()->img_path)}}"
+                        srcset="{{ url($product->images->first()->img_path) }}"
                         alt="" class="image-11" />
                     <img src="https://uploads-ssl.webflow.com/6135cf84ecf1c75fd670d1a1/61375716bfa69365be757b67_favorite.png"
                         loading="lazy" width="41" alt="" class="image-13" />
                 </div>
                 <div class="productinformation">
-                    <h4 class="productcardtitle">{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h4>
-                    <div>{{$product->time_period->name}}</div>
-                    <h4 class="productcardtitle price">&euro;{{$product->price}}</h4>
-                    <div class="instock">
-                    </div>
+                    <h4 class="productcardtitle">{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</h4>
+                    <div>{{ $product->time_period->name }}</div>
+                    <h4 class="productcardtitle price">€ {{ $product->price }}</h4>
                 </div>
             </div>
             </a>

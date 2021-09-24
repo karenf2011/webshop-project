@@ -7,7 +7,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +19,7 @@ use App\Http\Controllers\SearchController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('root');
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
 // SEARCH
@@ -33,9 +32,9 @@ Route::resource('products', ProductController::class, ['parameters' => ['product
 Route::resource('categories', CategoryController::class, ['parameters' => ['categories' => 'category:name']]);
 
 Route::get('cart', [CartController::class, 'index'])->name('cart');
-Route::post('cart', [CartController::class, 'store'])->name('cart');
-Route::post('cart/update', [CartController::class, 'update'])->name('cart.item.update');
-Route::post('cart/delete', [CartController::class, 'delete'])->name('cart.item.delete');
+Route::post('cart', [CartController::class, 'store'])->name('cart.store');
+Route::post('cart/update', [CartController::class, 'update'])->name('cart.update');
+Route::post('cart/delete', [CartController::class, 'delete'])->name('cart.delete');
 
 Route::resource('orders', OrderController::class);
 
