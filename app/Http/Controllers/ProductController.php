@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\TimePeriod;
+use Facade\FlareClient\Time\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -26,7 +28,7 @@ class ProductController extends Controller
     public function index()
     {
         return view('products/index', [
-            'products'  => Product::all(),
+            'products'  => Product::paginate(15),
         ]);
 
     }
@@ -68,9 +70,12 @@ class ProductController extends Controller
             $session = session::put('cart', []);
         }
 
+        $timePeriod= TimePeriod::findOrFail($product->time_period_id);
+
         return view('products/show', [
-            'product'   => $product,
-            'cart'      => $session,
+            'product'           => $product,
+            'cart'              => $session,
+            'relatedProducts'   => $timePeriod->products->take(3),
         ]);
     }
 
@@ -121,5 +126,4 @@ class ProductController extends Controller
                 
             ]);
     }
-    
 }

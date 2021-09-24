@@ -19,6 +19,6 @@ class TimePeriod extends Model
 
     public function products()
     {
-        return $this->hasMany(TimePeriod::class, 'time_period_id');
+        return $this->hasMany(Product::class, 'time_period_id');
     }
 }
