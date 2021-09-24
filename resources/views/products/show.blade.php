@@ -40,7 +40,7 @@
             @foreach($product->categories as $product->category)
                 <p>{{ $product->category->name }}</p>
             @endforeach
-            <h4>Prijs : &euro;{{ $product->price }}</h4>
+            <h4>Prijs : € {{ $product->price }}</h4>
             <a href="/cart" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO CART</a>
 
 
@@ -55,47 +55,28 @@
 <div class="section-2 wf-section">
     <div class="container-6 related w-container">
         <div class="div-block-87">
-            <h3 class="heading-19">Gerelateerde producten</h3>
+            <h3 class="heading-19">Ook uit de {{$product->time_period->name}}</h3>
             <div class="w-layout-grid productpagegrid">
-                <div class="productcard">
-                    <div class="productimage"><img src="/images/product-2.jpeg" loading="lazy"
-                            sizes="(max-width: 479px) 70vw, (max-width: 767px) 67vw, 70vw"
-                            srcset="/images/product-2-p-800.jpeg 800w, /images/product-2.jpeg 972w" alt=""
-                            class="image-11">
-                        <img src="/images/favorite.png" loading="lazy" width="41" alt="" class="image-13"></div>
-                    <div class="productinformation">
-                        <h4 class="productcardtitle">Nike - Blue pot</h4>
-                        <div>Tijdsperiode : 70&#x27;s<br><br></div>
-                        <h4 class="productcardtitle price">$ 39,99</h4>
-                        <div class="instock"></div>
-                    </div>
-                </div>
-                <div class="productcard">
-                    <div class="productimage"><img src="/images/product-2.jpeg" loading="lazy"
-                            sizes="(max-width: 479px) 70vw, (max-width: 767px) 67vw, 70vw"
-                            srcset="/images/product-2-p-800.jpeg 800w, /images/product-2.jpeg 972w" alt=""
-                            class="image-11"><img src="/images/favorite.png" loading="lazy" width="41" alt=""
-                            class="image-13"></div>
-                    <div class="productinformation">
-                        <h4 class="productcardtitle">Nike - Blue pot</h4>
-                        <div>A short description</div>
-                        <h4 class="productcardtitle price">$ 39,99</h4>
-                        <div class="instock"></div>
-                    </div>
-                </div>
-                <div class="productcard">
-                    <div class="productimage"><img src="/images/product-2.jpeg" loading="lazy"
-                            sizes="(max-width: 479px) 70vw, (max-width: 767px) 67vw, 70vw"
-                            srcset="/images/product-2-p-800.jpeg 800w, /images/product-2.jpeg 972w" alt=""
-                            class="image-11"><img src="/images/favorite.png" loading="lazy" width="41" alt=""
-                            class="image-13"></div>
-                    <div class="productinformation">
-                        <h4 class="productcardtitle">Nike - Blue pot</h4>
-                        <div>A short description</div>
-                        <h4 class="productcardtitle price">$ 39,99</h4>
-                        <div class="instock"></div>
-                    </div>
-                </div>
+                @foreach ($relatedProducts as $product)
+                    <a href="/products/{{ $product->slug }}">
+                        <div class="productcard">
+                        <div class="productimage"><img src="{{ url($product->images->first()->img_path) }}" loading="lazy"
+                                sizes="(max-width: 479px) 70vw, (max-width: 767px) 67vw, 70vw"
+                                srcset="{{ url($product->images->first()->img_path) }} 800w, {{ url($product->images->first()->img_path) }} 972w" alt=""
+                                class="image-11">
+                            <img src="/images/favorite.png" loading="lazy" width="41" alt="" class="image-13"></div>
+                        <div class="productinformation">
+                            <h4 class="productcardtitle">{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</h4>
+                            <div>Categorieën:
+                                @foreach ($product->categories as $category)
+                                    {{$category->name}}    
+                                @endforeach
+                            <br><br></div>
+                            <h4 class="productcardtitle price">€ {{ $product->price }}</h4>
+                        </div>
+                        </div>
+                    </a>
+                @endforeach                
             </div>
         </div>
     </div>
