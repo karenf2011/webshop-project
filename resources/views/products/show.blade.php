@@ -42,7 +42,7 @@
             @endforeach
             <h5>Op voorraad: {{ $product->stock }}</h5>
             <h4>Prijs : € {{ $product->price }}</h4>
-            <a href="/cart" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO CART</a>
+            <a href="/cart" id="addcartbutton" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO CART</a>
 
         </div>
     </div>
