@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products/index', [
+        return view('products.index', [
             'products'  => Product::paginate(15),
         ]);
 
@@ -72,7 +72,7 @@ class ProductController extends Controller
 
         $timePeriod= TimePeriod::findOrFail($product->time_period_id);
 
-        return view('products/show', [
+        return view('products.show', [
             'product'           => $product,
             'cart'              => $session,
             'relatedProducts'   => $timePeriod->products->take(3),
@@ -121,9 +121,7 @@ class ProductController extends Controller
             $products = Product::search($query)->get();
 
             return view('/search/search', [
-                
                 'products'   => $products,
-                
             ]);
     }
 }
