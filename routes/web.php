@@ -26,7 +26,6 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 // SEARCH
 
 Route::get('/search', [ProductController::class, 'search'])->name('search');
-Route::post('/search', [ProductController::class, 'search'])->name('search');
  
 // Auth::routes();
 

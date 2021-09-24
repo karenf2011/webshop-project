@@ -37,7 +37,7 @@ class OrderController extends Controller
             $session = session::put('cart', []);
         }
 
-        return view('orders/form', [
+        return view('orders.form', [
             'products'  => Product::whereIn('id', $sessionKeys)->get(),
             'cart'      => $session,
             'total'     => Product::getTotal($session),

@@ -26,11 +26,9 @@
   display: table;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
-  -ms-grid-column: 1;
   grid-column-start: 1;
   -ms-grid-row-span: 1;
   grid-row-end: 2;
-  -ms-grid-row: 1;
   grid-row-start: 1;
 }
 
@@ -39,11 +37,9 @@
   display: table;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
-  -ms-grid-column: 1;
   grid-column-start: 1;
   -ms-grid-row-span: 1;
   grid-row-end: 2;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   clear: both;
 }
@@ -125,11 +121,9 @@
 
 .body {
   background-color: #ffffff;
-  font-family: Bitter, serif;
 }
 
 .heading {
-  font-family: Bitter, serif;
   color: #000;
   font-size: 16px;
   font-weight: 700;
@@ -141,7 +135,6 @@
 .heading.productcategory {
   margin-top: 10px;
   margin-bottom: 0px;
-  font-family: Bitter, serif;
   font-size: 20px;
   text-align: center;
 }
@@ -182,7 +175,6 @@
   margin-bottom: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-family: 'Great Vibes', cursive;
   color: #000;
   font-size: 25px;
   text-decoration: none;
@@ -765,7 +757,6 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
 
 .div-block-41 {
@@ -1002,10 +993,6 @@
   font-weight: 500;
 }
 
-.body-2 {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-}
-
 .dropdown {
   margin-left: 0px;
   opacity: 1;
@@ -1093,7 +1080,6 @@
 
 .body-3 {
   background-color: #ffffff;
-  font-family: Bitter, serif;
 }
 
 .mobilesubmenu {
@@ -1191,7 +1177,6 @@
 }
 
 .text-block-10 {
-  font-family: Bitter, serif;
   font-weight: 700;
 }
 
@@ -1224,7 +1209,6 @@
 
 .body-4 {
   background-color: #ffffff;
-  font-family: Bitter, serif;
 }
 
 .container-4 {
@@ -1417,10 +1401,6 @@
   height: 35vh;
 }
 
-.heading-7 {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-}
-
 .productimage {
   position: relative;
   min-width: 20vw;
@@ -1453,7 +1433,6 @@
 .productcardtitle {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Bitter, serif;
 }
 
 .productcardtitle.price {
@@ -1597,11 +1576,6 @@
   background-color: #ffffff;
 }
 
-.productdetails.card {
-  
-  
-}
-
 .div-block-58 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1617,7 +1591,6 @@
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  font-family: Bitter, serif;
   font-weight: 700;
 }
 
@@ -1645,7 +1618,6 @@
 }
 
 .text-block-11 {
-  font-family: Bitter, serif;
   color: #000;
   font-weight: 700;
   text-align: left;
@@ -1676,20 +1648,23 @@
 }
 
 .button-4 {
-  margin-left:20px;
+  margin-right:20px;
   min-width:160px;
   background-color: #000;
   color: white !important;
   font-weight: 700;
 }
 
-.text-block-12 {
-  font-family: Bitter, serif;
+#orderbutton {
+  margin-right: 0px;
+}
+
+#addcartbutton {
+  margin-right: 0px;
 }
 
 .body-5 {
   background-color: #ffffff;
-  font-family: Bitter, serif;
 }
 
 .div-block-61 {
@@ -1911,7 +1886,6 @@ a {
 
 .body-6 {
   background-color: #ffffff;
-  font-family: Bitter, serif;
 }
 
 .usercontainer {
@@ -2656,7 +2630,6 @@ a {
 
 .body-7 {
   background-color: #ffffff;
-  font-family: Bitter, serif;
 }
 
 .supportsection {
@@ -2968,10 +2941,6 @@ a {
 
   .checkbox-field {
     padding-left: 0px;
-  }
-
-  .form-wrapper {
-    font-family: Bitter, serif;
   }
 
   .div-block-43 {
@@ -3532,14 +3501,12 @@ a {
 
   .dropdown-link {
     min-width: 150px;
-    font-family: Bitter, serif;
     color: #000;
     text-align: center;
   }
 
   .dropdown-3 {
     display: block;
-    font-family: Bitter, serif;
   }
 
   .checkoutdetails {
@@ -3907,23 +3874,17 @@ a {
     margin-top: 20px;
   }
 
-  .button.registration {
-    font-family: Bitter, serif;
-  }
-
   .form-box {
     width: auto;
     margin-top: 0%;
   }
 
   .text-block-8 {
-    font-family: Bitter, serif;
     white-space: nowrap;
   }
 
   .heading-4 {
     position: static;
-    font-family: Bitter, serif;
     line-height: 140%;
   }
 
@@ -3941,18 +3902,6 @@ a {
     padding-left: 20px;
   }
 
-  .field-label-2 {
-    font-family: Bitter, serif;
-  }
-
-  .text-block-9 {
-    font-family: Bitter, serif;
-  }
-
-  .text-block-9._2 {
-    font-family: Bitter, serif;
-  }
-
   .legal-box {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3963,10 +3912,6 @@ a {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-  }
-
-  .text-field-2 {
-    font-family: Bitter, serif;
   }
 
   .div-block-6-copy {
@@ -3981,7 +3926,6 @@ a {
     padding-top: 80px;
     padding-right: 20px;
     padding-left: 20px;
-    font-family: Bitter, serif;
   }
 
   .social-login {
@@ -3989,16 +3933,7 @@ a {
     height: 45px;
   }
 
-  .page-container._2 {
-    font-family: Bitter, serif;
-  }
-
-  .heading-5 {
-    font-family: Bitter, serif;
-  }
-
   .heading-1 {
-    font-family: Bitter, serif;
     font-size: 36px;
     line-height: 140%;
     font-weight: 500;
@@ -4013,14 +3948,6 @@ a {
 
   .social-box {
     margin-bottom: 0%;
-  }
-
-  .checkbox-label {
-    
-  }
-
-  .body-2 {
-    font-family: Bitter, serif;
   }
 
   .div-block-43 {
@@ -4530,7 +4457,6 @@ a {
     z-index: 9999;
     display: none;
     height: 100vh;
-    font-family: Bitter, serif;
   }
 
   .image-26 {
@@ -4538,17 +4464,14 @@ a {
   }
 
   .heading-20 {
-    font-family: Bitter, serif;
     color: #000;
   }
 
   .heading-21 {
-    font-family: Bitter, serif;
     color: #000;
   }
 
   .heading-22 {
-    font-family: Bitter, serif;
     color: #000;
   }
 
@@ -4595,9 +4518,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -4610,9 +4531,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 4;
   grid-column-start: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 5;
@@ -4625,9 +4544,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 3;
   grid-column-start: 3;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 4;
@@ -4649,9 +4566,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -4664,9 +4579,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 4;
   grid-column-start: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 5;
@@ -4679,9 +4592,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 3;
   grid-column-start: 3;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 4;
@@ -4694,9 +4605,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -4709,9 +4618,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 2;
   grid-column-start: 2;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 3;
@@ -4724,9 +4631,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -4739,9 +4644,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 2;
   grid-column-start: 2;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 3;
@@ -4750,66 +4653,54 @@ a {
 }
 
 #w-node-_5eb1a2a9-129c-7feb-80d8-8666c0876e84-873d7195 {
-  -ms-grid-row: span 1;
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
-  -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
   grid-column-end: span 1;
 }
 
 #w-node-_618dcbe5-097d-8898-d9c1-ae4b48c1598c-873d7195 {
-  -ms-grid-row: span 1;
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
-  -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
   grid-column-end: span 1;
 }
 
 #w-node-_6fb7f9a6-351a-417b-15ce-10d7d9b5591e-873d7195 {
-  -ms-grid-row: span 1;
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
-  -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
   grid-column-end: span 1;
 }
 
 #w-node-d21848f7-b8fc-7578-14a9-0915fd394f9b-873d7195 {
-  -ms-grid-row: span 1;
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
-  -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
   grid-column-end: span 1;
 }
 
 #w-node-_9fa5cbad-e2e1-5a9d-2c31-cd84a97e6b5a-873d7195 {
-  -ms-grid-row: span 1;
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
-  -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
   grid-column-end: span 1;
 }
 
 #w-node-dd913205-5d04-e628-6665-2ea4efe74745-873d7195 {
-  -ms-grid-row: span 1;
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
-  -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
   grid-column-end: span 1;
@@ -4829,9 +4720,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -4844,9 +4733,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 4;
   grid-column-start: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 5;
@@ -4859,9 +4746,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 3;
   grid-column-start: 3;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 4;
@@ -4883,9 +4768,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -4898,9 +4781,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 4;
   grid-column-start: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 5;
@@ -4913,9 +4794,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 3;
   grid-column-start: 3;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 4;
@@ -4937,9 +4816,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -4952,9 +4829,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 4;
   grid-column-start: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 5;
@@ -4967,9 +4842,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 3;
   grid-column-start: 3;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 4;
@@ -4991,9 +4864,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -5006,9 +4877,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 4;
   grid-column-start: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 5;
@@ -5021,9 +4890,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 3;
   grid-column-start: 3;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 4;
@@ -5045,9 +4912,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 1;
   grid-column-start: 1;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 2;
@@ -5060,9 +4925,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 4;
   grid-column-start: 4;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 5;
@@ -5075,9 +4938,7 @@ a {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  -ms-grid-column: 3;
   grid-column-start: 3;
-  -ms-grid-row: 1;
   grid-row-start: 1;
   -ms-grid-column-span: 1;
   grid-column-end: 4;
@@ -5306,4 +5167,62 @@ a:hover {
 
 .delete {
   max-width: 100px;
+}
+
+// ORDERS FORMPAGE
+
+.checkoutcontainer {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-bottom: 10vw;
+  margin-top: 2.5vw;
+  color: black !important;
+}
+
+.checkoutgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.checkoutform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: 70vh;
+}
+.checkoutform label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkoutform input {
+  padding: 5px;
+}
+
+#formtext {
+  
+  text-align: right;
+}
+.checkoutform form {
+ width: 50%;
+}
+
+.checkoutitems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#checkouttotal {
+  margin-top: 40px;
 }

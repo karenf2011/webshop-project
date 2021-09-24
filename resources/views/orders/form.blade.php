@@ -1,10 +1,52 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid mt-2">
-    <div class="row">
-        <div class="col-4">
-            <h2>Order items</h2>
+<div class="checkoutcontainer">
+    <div class="checkoutgrid">
+        
+        <div class="checkoutform">
+            <h4>Gegevens</h4>
+            <form action="{{$action}}" method={{$method}}>
+            @csrf
+                
+                <label for="first_name">
+                    <h4 id="formtext">Voornaam</h4>
+                    <input type="text" name="first_name" id="first_name">
+                </label>
+                
+                
+                <label for="last_name">
+                    <h4 id="formtext">Last Name</h4>
+                    <input type="text" name="last_name" id="last_name">
+                </label>
+                <label for="email">
+                    <h4 id="formtext">E-mail</h4>
+                    <input type="email" name="email" id="email">
+                </label>
+                <label for="phone_number">
+                    <h4 id="formtext">Telefoon nummer</h4> 
+                    <input type="tel" name="phone_number" id="phone_number">
+                </label>
+                <label for="street_address">
+                    <h4 id="formtext">Straatnaam</h4>
+                    <input type="text" name="street_address" id="street_address">
+                </label>
+                <label for="postal_code">
+                    <h4 id="formtext">Postcode</h4>
+                    <input type="text" name="postal_code" id="postal_code">
+                </label>
+                <label for="city">
+                    <h4 id="formtext">Plaats</h4>
+                    <input type="text" name="city" id="city">
+                </label>
+                <label for="country">
+                    <h4 id="formtext">Land</h4>
+                    <input type="text" name="country" id="country">
+                </label>
+        </div>
+
+        <div class="checkoutitems">
+            <h4>Bestelling</h4>
             <ul>
                 @foreach($products as $product)
                 <li id="{{$product->id}}">
@@ -13,42 +55,13 @@
                     <p>Prijs: € {{$product->price}} p.s.</p>
                 </li>
                 @endforeach
-                <li><h3>Total: € {{ $total }}</h3></li>
+                <h4 id="checkouttotal">Totaal: € {{ $total }}</h4>
             </ul>  
-        </div>
-        <div class="col-8">
-            <h2>Gegevens</h2>
-            <form action="{{$action}}" method={{$method}}>
-            @csrf
-                <label for="first_name">First Name: 
-                    <input type="text" name="first_name" id="first_name">
-                </label>
-                <label for="last_name">Last Name: 
-                    <input type="text" name="last_name" id="last_name">
-                </label>
-                <label for="email">Email: 
-                    <input type="email" name="email" id="email">
-                </label>
-                <label for="phone_number">Phone Number: 
-                    <input type="tel" name="phone_number" id="phone_number">
-                </label>
-                <label for="street_address">Street Address: 
-                    <input type="text" name="street_address" id="street_address">
-                </label>
-                <label for="postal_code">Postal Code: 
-                    <input type="text" name="postal_code" id="postal_code">
-                </label>
-                <label for="city">City: 
-                    <input type="text" name="city" id="city">
-                </label>
-                <label for="country">Country: 
-                    <input type="text" name="country" id="country">
-                </label>
-                <button type="submit" class="button-4 w-button">PLACE ORDER</button>
-            </form>
+            <button type="submit" id="orderbutton" class="button-4 w-button">PLAATS ORDER</button>
+
         </div>
        
-          
+        </form>  
        
 </div>
 </div>
