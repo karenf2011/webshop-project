@@ -5,21 +5,19 @@
   <div class="wf-section mt-5">
     <div class="container-4 w-container">
       <div class="w-layout-grid grid-2">
-
         <div class="div-block-57">
           <div class="productdetails checkout">
           @foreach($products as $product)
               <div class="productcard checkout" id="{{$product->id}}">
                 <div class="div-block-61">
-                <a href="/products/{{$product->slug}}">
+                <a href="{{ route ('products.show', $product) }}">
                   <img id='cartimage' src="{{ url($product->images->first()->img_path) }}" class="img-fluid" alt="Responsive image">
                 </a>
                 </div>
                 <div class="div-block-62">
-                  <a href="/products/{{$product->slug}}">
+                  <a href="{{ route ('products.show', $product) }}">
                     <div>{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</div>
                   </a>
-                  
                   <div class="text-block-13">€ {{$product->price}} p.s.</div>
                   <div class="div-block-65">
                     <a class="button-5 w-button adjust-quantity" p_id="{{$product->id}}" quantity="{{$cart[$product->id]}}" value="-">-</a>

@@ -45,27 +45,23 @@
         <div class="div-block-87">
             <h3 class="heading-19">Uitgelicht</h3>
             <div class="w-layout-grid productpagegrid">
-
-
                 @foreach($featured as $feature)
-                <a href="/products/{{$feature->slug}}">
-                <div class="productcard">
-                        <div class="productimage"><img src="{{ url($feature->images->first()->img_path) }}"
-                                loading="lazy" sizes="(max-width: 479px) 90vw, (max-width: 767px) 67vw, 70vw"
-                                srcset="{{ url($feature->images->first()->img_path) }}, {{ url($feature->images->first()->img_path) }}"
-                                alt="" class="image-11"><img src="images/favorite.png" loading="lazy" width="41" alt=""
-                                class="image-13"></div>
-                        <div class="productinformation">
-                            <h4 class="productcardtitle">{{ $feature->brand->name }} {{ $feature->brand->line }}
-                                {{ $feature->name }}</h4>
-                            <div>Tijdsperiode : {{$feature->time_period->name}} </div>
-                            <h4 class="productcardtitle price">&euro;{{ $feature->price }}</h4>
-                            <div class="instock"></div>
-                        </div>
-                </div>
-                </a>
+                    <a href="{{ route ('products.show', $feature) }}">
+                    <div class="productcard">
+                            <div class="productimage"><img src="{{ url($feature->images->first()->img_path) }}"
+                                    loading="lazy" sizes="(max-width: 479px) 90vw, (max-width: 767px) 67vw, 70vw"
+                                    srcset="{{ url($feature->images->first()->img_path) }}, {{ url($feature->images->first()->img_path) }}"
+                                    alt="" class="image-11"><img src="images/favorite.png" loading="lazy" width="41" alt=""
+                                    class="image-13"></div>
+                            <div class="productinformation">
+                                <h4 class="productcardtitle">{{ $feature->brand->name }} {{ $feature->brand->line }}
+                                    {{ $feature->name }}</h4>
+                                <div>Tijdsperiode : {{$feature->time_period->name}} </div>
+                                <h4 class="productcardtitle price">€ {{ $feature->price }}</h4>
+                            </div>
+                    </div>
+                    </a>
                 @endforeach
-
             </div>
         </div>
     </div>

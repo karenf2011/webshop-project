@@ -8,8 +8,8 @@
         <div class="sluggrid">
 
             <div class="sluggridphotos">
-                @foreach($product->images as $product->image)
-                    <img src="{{ url($product->image->img_path) }}" onclick="openModal();currentSlide(1)"
+                @foreach($product->images as $image)
+                    <img src="{{ url($image->img_path) }}" onclick="openModal();currentSlide(1)"
                         target="_blank" data-action="lightbox-open" class="img-fluid" alt="Responsive image">
                 @endforeach
 
@@ -31,25 +31,20 @@
                         @endforeach
                     </div>
                 </div>
-
             </div>
 
             <div class="sluginfo">
             <h3>{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</h3>
             <h4>{{ $product->time_period->name }}</h4>
             <h4>Categorieën</h4>
-            @foreach($product->categories as $product->category)
-                <p>{{ $product->category->name }}</p>
+            @foreach($product->categories as $category)
+                <p>{{ $category->name }}</p>
             @endforeach
             <h5>Op voorraad: {{ $product->stock }}</h5>
             <h4>Prijs : € {{ $product->price }}</h4>
             <a href="/cart" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO CART</a>
 
-
         </div>
-
-      
-
     </div>
   </div>
 </div>
@@ -57,10 +52,10 @@
 <div class="section-2 wf-section">
     <div class="container-6 related w-container">
         <div class="div-block-87">
-            <h3 class="heading-19">Ook uit de {{$product->time_period->name}}</h3>
+            <h3 class="heading-19">Ook uit de {{ $product->time_period->name }}</h3>
             <div class="w-layout-grid productpagegrid">
                 @foreach ($relatedProducts as $product)
-                    <a href="/products/{{ $product->slug }}">
+                    <a href="{{ route ('products.show', $product) }}">
                         <div class="productcard">
                         <div class="productimage"><img src="{{ url($product->images->first()->img_path) }}" loading="lazy"
                                 sizes="(max-width: 479px) 70vw, (max-width: 767px) 67vw, 70vw"
@@ -71,7 +66,7 @@
                             <h4 class="productcardtitle">{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</h4>
                             <div>Categorieën:
                                 @foreach ($product->categories as $category)
-                                    {{$category->name}}    
+                                    {{ $category->name }}    
                                 @endforeach
                             <br><br></div>
                             <h4 class="productcardtitle price">€ {{ $product->price }}</h4>
@@ -154,6 +149,5 @@
 
             })
         })
-
     </script>
 @endpush

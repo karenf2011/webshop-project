@@ -4,7 +4,7 @@
 
 <div class="productsection wf-section">
     <div class="mobilesubmenu">
-        <a href="/products" class="link-block w-inline-block">
+        <a href="{{ route('products.index') }}" class="link-block w-inline-block">
             <h4 class="heading">ALLE PRODUCTEN</h4>
         </a>
         <a href="categories/glaswerk" class="link-block w-inline-block">
@@ -37,7 +37,7 @@
         <div class="w-layout-grid productpagegrid">
 
             @foreach ($products as $product)
-            <a href="/products/{{$product->slug}}">
+            <a href="{{ route ('products.show', $product) }}">
             <div class="productcard">
                 <div class="productimage">
                     <img src="{{url($product->images->first()->img_path)}}"
@@ -50,9 +50,7 @@
                 <div class="productinformation">
                     <h4 class="productcardtitle">{{$product->brand->name}} {{$product->brand->line}} {{$product->name}}</h4>
                     <div>{{$product->time_period->name}}</div>
-                    <h4 class="productcardtitle price">&euro;{{$product->price}}</h4>
-                    <div class="instock">
-                    </div>
+                    <h4 class="productcardtitle price">€ {{$product->price}}</h4>
                 </div>
             </div>
             </a>
