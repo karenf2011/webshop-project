@@ -19,15 +19,13 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+Auth::routes();
+
 Route::get('/', [HomeController::class, 'index'])->name('root');
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
-// SEARCH
-
 Route::get('search', [ProductController::class, 'search'])->name('search');
  
-Auth::routes();
-
 Route::resource('products', ProductController::class, ['parameters' => ['products' => 'product:slug']]);
 Route::resource('categories', CategoryController::class, ['parameters' => ['categories' => 'category:name']]);
 
