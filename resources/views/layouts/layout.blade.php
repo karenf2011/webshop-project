@@ -37,7 +37,7 @@
 
             <div class="div-block-67">
                 <div class="form-block-3 w-form">
-                    <form id="email-form-2" class="form-2" method="GET" action="/search">
+                    <form id="email-form-2" class="form-2" method="GET" action="search">
                         <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                         <input type="text" class="text-field-3 w-input" maxlength="256" placeholder="Zoek"
                             name="searchresults" id="email-3"></form>
@@ -124,21 +124,17 @@
         </style>
         </div>
 
+        <a href="/" class="link-block w-inline-block">
+            <h4 class="heading">HOME</h4>
+        </a>
         <a href="/products" class="link-block w-inline-block">
             <h4 class="heading">ALLE PRODUCTEN</h4>
         </a>
-        <a href="/categories/glaswerk" class="link-block w-inline-block">
-            <h4 class="heading">GLASWERK</h4>
-        </a>
-        <a href="/categories/keramiek" class="link-block w-inline-block">
-            <h4 class="heading">KERAMIEK</h4>
-        </a>
-        <a href="/categories/servies" class="link-block w-inline-block">
-            <h4 class="heading">SERVIES</h4>
-        </a>
-        <a href="/categories/sierobjecten" class="link-block w-inline-block">
-            <h4 class="heading">SIEROBJECTEN</h4>
-        </a>
+        @foreach ($categories as $category)
+            <a href="/categories/{{ lcfirst($category->name) }}" class="link-block w-inline-block">
+                <h4 class="heading">{{ strtoupper($category->name)}}</h4>
+            </a>
+        @endforeach
 </div>
 
     @yield('content')
@@ -164,7 +160,7 @@
                             <a href="/categories/servies" class="footer-link">Servies</a>
                         </li>
                         <li>
-                            <a href="/categories/sierobjecten" class="footer-link">Sier Objecten</a>
+                            <a href="/categories/sierobjecten" class="footer-link">Sierobjecten</a>
                         </li>
 
                     </ul>

@@ -47,8 +47,9 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         return view('categories.show', [
-            'products'  => $category->products,
-            'category'  => $category,
+            'products'      => $category->products,
+            'category'      => $category,
+            'categories'    => Category::all()->whereNotin('id', 1),
         ]);
     }
 

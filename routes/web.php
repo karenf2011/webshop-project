@@ -24,9 +24,9 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 
 // SEARCH
 
-Route::get('/search', [ProductController::class, 'search'])->name('search');
+Route::get('search', [ProductController::class, 'search'])->name('search');
  
-// Auth::routes();
+Auth::routes();
 
 Route::resource('products', ProductController::class, ['parameters' => ['products' => 'product:slug']]);
 Route::resource('categories', CategoryController::class, ['parameters' => ['categories' => 'category:name']]);
@@ -39,13 +39,13 @@ Route::post('cart/delete', [CartController::class, 'delete'])->name('cart.delete
 Route::resource('orders', OrderController::class);
 
 // USER
-Route::get('/user/signup', function () {
-    return view('/user/registerpage');
-});
+// Route::get('/user/signup', function () {
+//     return view('/user/registerpage');
+// });
 
-Route::get('/user/login', function () {
-    return view('/user/loginpage');
-});
+// Route::get('/user/login', function () {
+//     return view('/user/loginpage');
+// });
 
 // SUPPORT
 
