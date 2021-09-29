@@ -25,14 +25,61 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('products.index', [
-            'products'  => Product::paginate(15),
-        ]);
 
+        $min = $request->input('min-price');
+        $max = $request->input('max-price');
+
+        if ($request->fullUrl() == 'http://127.0.0.1:8000/products?sort=price_asc') {
+            return view('products.index', [
+                'products'  => Product::all()
+                -> sortBy('price')
+            ]);
+        }
+        
+        elseif ($request->fullUrl() == 'http://127.0.0.1:8000/products?sort=price_dcs') {
+            return view('products.index', [
+                'products'  => Product::all()
+                -> sortByDesc('price')
+            ]);
+        }
+    
+        elseif ($request->fullUrl() == 'http://127.0.0.1:8000/products?sort=newest') {
+            return view('products.index', [
+                'products'  => Product::all()
+                -> sortByDesc('created_at')
+            ]);
+        }
+   
+        elseif ($request->has('min-price'))  {
+            return view('products.index', [
+                'products'  => Product::whereBetween('price', [$min, $max])
+                ->get()
+            ]);
+           
+        }
+
+        else{
+            return view('products.index', [
+                'products'  => Product::paginate(15)
+            ]);   
+        }
+        
     }
 
+    // public function filterProducts(Request $request)
+
+    // {
+    //     $min = $request->input('min-price');
+    //     $max = $request->input('max-price');
+
+    //     return view('products.index', [
+    //         'products'  =>   Product::whereBetween('price', [$min, $max])
+    //         ->get()
+    //     ]);   
+     
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -61,6 +108,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+
     public function show(Product $product)
     {
         // dd(session('cart'));
