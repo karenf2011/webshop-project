@@ -31,13 +31,13 @@
     <div class="navigationsection wf-section">
 
         <div class="div-block">
-            <a href="/home" class="logoblock w-inline-block">
+            <a href="{{ route('root') }}" class="logoblock w-inline-block">
                 <h1 class="logo">Glasswerk</h1>
             </a>
 
             <div class="div-block-67">
                 <div class="form-block-3 w-form">
-                    <form id="email-form-2" class="form-2" method="GET" action="search">
+                    <form id="email-form-2" class="form-2" method="GET" action="{{ route('search') }}">
                         <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                         <input type="text" class="text-field-3 w-input" maxlength="256" placeholder="Zoek"
                             name="searchresults" id="email-3"></form>
@@ -62,7 +62,7 @@
                                 class="submit-button w-button">
                             <div class="div-block-44"><label for="email-4" style="text-decoration:none;"
                                     class="field-label-3">Nog geen gebruiker? </label>
-                                <a href="/user/signup" class="link-block-2 w-inline-block"><label for="email-4"
+                                <a href="{{ route('register') }}" class="link-block-2 w-inline-block"><label for="email-4"
                                         class="field-label-3">Registreer hier</label></a>
                             </div>
                         </form>
@@ -78,7 +78,7 @@
 
             <div class="navicons"><img src="/images/user.svg" loading="lazy" width="50"
                     data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2">
-                <a href="/cart" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy"
+                <a href="{{ route('cart') }}" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy"
                         alt="" class="image"></a>
 
             </div>
@@ -86,7 +86,7 @@
                 <div class="dropdown-toggle-5 w-dropdown-toggle"><img src="/images/meat.svg" loading="lazy" width="43"
                         alt="" class="image-9"></div>
                 <nav class="dropdown-list-5 w-dropdown-list">
-                    <a href="#" class="dropdown-link w-dropdown-link">Products</a>
+                    <a href="{{ route('products.index') }}" class="dropdown-link w-dropdown-link">Products</a>
                     <a href="#" class="dropdown-link-2 w-dropdown-link">Support</a>
                     <a href="#" class="dropdown-link-3 w-dropdown-link">About Us</a>
                 </nav>
@@ -124,14 +124,14 @@
         </style>
         </div>
 
-        <a href="/" class="link-block w-inline-block">
+        <a href="{{ route('home') }}" class="link-block w-inline-block">
             <h4 class="heading">HOME</h4>
         </a>
-        <a href="/products" class="link-block w-inline-block">
+        <a href="{{ route('products.index') }}" class="link-block w-inline-block">
             <h4 class="heading">ALLE PRODUCTEN</h4>
         </a>
         @foreach ($categories as $category)
-            <a href="/categories/{{ lcfirst($category->name) }}" class="link-block w-inline-block">
+            <a href="{{ route ('categories.show', $category) }}" class="link-block w-inline-block">
                 <h4 class="heading">{{ strtoupper($category->name)}}</h4>
             </a>
         @endforeach
@@ -142,31 +142,23 @@
     <footer id="footer" class="footer wf-section">
         <div class="container-3 w-container">
             <div class="footer-flex-container">
-                <a href="/home" class="logoblock w-inline-block">
+                <a href="{{ route('home') }}" class="logoblock w-inline-block">
                     <h1 id="footerlogo" class="logo">Glasswerk</h1>
                 </a>
                 <div>
-                    <a href="/products">
+                    <a href="{{ route('products.index') }}">
                         <h2 class="footer-heading">Producten</h2>
                     </a>
                     <ul role="list" class="w-list-unstyled">
-                        <li>
-                            <a href="/categories/glaswerk" class="footer-link">Glaswerk</a>
-                        </li>
-                        <li>
-                            <a href="/categories/keramiek" class="footer-link">Keramiek</a>
-                        </li>
-                        <li>
-                            <a href="/categories/servies" class="footer-link">Servies</a>
-                        </li>
-                        <li>
-                            <a href="/categories/sierobjecten" class="footer-link">Sierobjecten</a>
-                        </li>
-
+                        @foreach ($categories as $category)
+                            <li>
+                                <a href="{{ route('categories.show', $category) }}" class="footer-link">{{ strtoupper($category->name)}}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div>
-                    <a href="/support">
+                    <a href="#">
                         <h2 class="footer-heading">Klantenservice</h2>
                     </a>
                     <ul role="list" class="w-list-unstyled">
