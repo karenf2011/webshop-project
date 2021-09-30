@@ -8,7 +8,7 @@
 [class*=" w-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'webflow-icons' !important;
-  speak: none;
+  
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -155,8 +155,7 @@ html[data-w-dynpage] [data-w-cloak] {
   text-transform: inherit;
   list-style-type: disc;
   text-shadow: none;
-  font-smoothing: auto;
-  vertical-align: baseline;
+  
   cursor: inherit;
   white-space: inherit;
   word-break: normal;
@@ -332,7 +331,7 @@ label {
   font-size: 14px;
   line-height: 1.428571429;
   color: #000000;
-  vertical-align: middle;
+
   background-color: #ffffff;
   border: 1px solid #000000;
 }
