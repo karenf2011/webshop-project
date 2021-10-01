@@ -37,7 +37,7 @@
 
             <div class="div-block-67">
                 <div class="form-block-3 w-form">
-                    <form id="email-form-2" class="form-2" method="GET" action="/search">
+                    <form id="email-form-2" class="form-2" method="GET" action="/products">
                         <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                         <input type="text" class="text-field-3 w-input" maxlength="256" placeholder="Zoek"
                             name="searchresults" id="email-3"></form>
