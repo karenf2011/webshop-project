@@ -14,15 +14,18 @@
                 </div>
             
                 <nav class="dropdown-list w-dropdown-list">
-                    {{-- <a href="{{URL::current()."?sort=price_asc"}}" class="w-dropdown-link">Prijs oplopend</a>
-                    <a href="{{URL::current()."?sort=price_dcs"}}" class="w-dropdown-link">Prijs aflopend</a>
-                    <a href="{{URL::current()."?sort=newest"}}" class="w-dropdown-link">Nieuwste</a> --}}
+                    
                     <form method="GET" action="/products">
+                    <select name="sort">
+                        <option value="price_asc">Prijs oplopend</option>
+                        <option value="price_dcs">Prijs aflopend</option>
+                    </select>
                    
-                    <input type="submit" name="price_asc"  class="w-dropdown-link" value="Prijs oplopend">
-                    <input type="submit" name="price_dcs"  class="w-dropdown-link" value="Prijs aflopend">
-
-                    <a href="{{URL::current()."?sort=newest"}}" class="w-dropdown-link">Nieuwste</a>
+                    <!-- <input type="submit" name="price_dcs"  class="w-dropdown-link" value="Nieuwste"> -->
+                    
+                    <!-- <a href="{{url()->full().'?sort=price_asc'}}" class="w-dropdown-link">Prijs oplopend</a>
+                    <a href="{{url()->full().'?sort=price_dcs'}}" class="w-dropdown-link">Prijs aflopend</a>
+                    <a href="{{url()->full().'?sort=newest'}}" class="w-dropdown-link">Nieuwste</a> -->
                 </nav>
             </div>
         </div>
@@ -35,13 +38,13 @@
                     <p  id="price-slider-paragraph">
                       € 0 - € 200
                     </p>
-                    <form method="GET" action="/products">
+                    
            
                     <input type="range" 
                            name="min_price" 
                            id="min-price" 
                            class="price-slider-range"  
-                           value= {{ Session::get('min_price')}}
+                           value="{{ Session::get('min_price')}}"
                            min="0" 
                            max="200" 
                            step="1"
@@ -50,7 +53,7 @@
                            name="max_price" 
                            id="max-price" 
                            class="price-slider-range"
-                           value= {{ Session::get('max_price')}}
+                           value="{{ Session::get('max_price')}}"
                            min="0" 
                            max="200" 
                            step="1" >

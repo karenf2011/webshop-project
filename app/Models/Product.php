@@ -63,5 +63,4 @@ class Product extends Model
         return $total;
     }
 
-
 }

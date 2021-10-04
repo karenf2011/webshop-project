@@ -8,6 +8,8 @@ use Facade\FlareClient\Time\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+use function Psy\debug;
+
 class ProductController extends Controller
 {
      /**
@@ -28,61 +30,44 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $searchresult = $request->input('searchresults');
+        $searchquery = $request->input('searchquery');
         $min_price = $request->input('min_price');
         $max_price = $request->input('max_price');
         
 
-        $query = Product::all();
+        $products = Product::all();
 
-   
-     
-        if($request->searchresults){
-
-            $query = Product::search($searchresult)->get();
-
+        if($request->searchquery){
+            
+            $products = Product::search($searchquery)->get();
         }
+
 
         if($request->min_price or $request->max_price){
-            // This will only executed if you received any price
-            // Make you you validated the min and max price properly
-           $query = Product::whereBetween('price', [$min_price, $max_price])
-                ->get();
+           
+           $products = $products->whereBetween('price', [$min_price, $max_price]);
+                
                 $request->session()->put('max_price', $max_price);
                 $request->session()->put('min_price', $min_price);
-
-        }
-
-        if($request->min_price or $request->max_price && $request->price_asc){
-            // This will only executed if you received any price
-            // Make you you validated the min and max price properly
-            $min_price_s = $request->session()->get('min_price');
-            $max_price_s = $request->session()->get('max_price');
-                
-           $query = Product::whereBetween('price', [$min_price_s, $max_price_s])
-                ->orderBy('price')
-                ->get();
-
-        }
-
-        if($request->price_asc){
-       
-           $query = $query -> sortBy('price');
            
-     
         }
 
-        if($request->price_dcs){
-            // This will only executed if you received any price
-            // Make you you validated the min and max price properly
-            $query = Product::all()
-                -> sortByDesc('price');
+        if($request->sort == 'price_asc'){
+            
+            $products = $products
+                ->sortBy('price');
+              
+        }
+        else if($request->sort == 'price_dcs'){
+                
+            $products = $products->sortByDesc('price');
+            
         }
 
-        
 
-        $products = $query;
-        return view('products.index', compact('products'));
+        return view('products.index', [
+            'products' => $products
+        ]);
       
     
     }
