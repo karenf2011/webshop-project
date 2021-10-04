@@ -11,7 +11,7 @@
                         <div class="productcard checkout" id="{{ $product->id }}">
                             <div class="div-block-61">
                                 <a href="{{ route ('products.show', $product) }}">
-                                    <img id='cartimage' src="{{ url($product->images->first()->img_path) }}"
+                                    <img id='cartimage' src="{{ asset($product->images->first()->img_path) }}"
                                         class="img-fluid" alt="Responsive image">
                                 </a>
                             </div>
@@ -44,7 +44,7 @@
                     <div class="div-block-60">
                         <a href="{{ route('orders.create') }}"
                             class="button-4 w-button">UITCHECKEN</a>
-                        <a href="/products" class="button-4 w-button">VERDER WINKELEN</a>
+                        <a href="{{ route('products.index') }}" class="button-4 w-button">VERDER WINKELEN</a>
                     </div>
                     <div class="div-block-64"><img src="images/ideal-logo.svg" loading="lazy" width="84" alt=""
                             class="image-15"><img src="images/PayPal-Logo-PNG4.png" loading="lazy" width="111"
@@ -86,7 +86,7 @@
             })
         })
 		
-		    //DELETE FUNCTION
+		//DELETE FUNCTION
         $(document).on('click', '.delete', function (event) {
             let product_id = $(this).attr('p_id');
 
@@ -102,7 +102,6 @@
                     $('.productcard.checkout#' + product_id).remove()
                 }
             }).catch(function (error) {
-
 
             })
         })

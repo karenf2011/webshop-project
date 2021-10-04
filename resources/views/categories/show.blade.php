@@ -25,12 +25,11 @@
                 <a href="{{ route ('products.show', $product) }}">
                 <div class="productcard">
                     <div class="productimage">
-                        <img src="{{ url($product->images->first()->img_path) }}"
+                        <img src="{{ asset($product->images->first()->img_path) }}"
                             loading="lazy" sizes="(max-width: 479px) 89vw, (max-width: 767px) 67vw, 70vw"
-                            srcset="{{ url($product->images->first()->img_path) }}"
+                            srcset="{{ asset($product->images->first()->img_path) }}"
                             alt="" class="image-11" />
-                        <img src="https://uploads-ssl.webflow.com/6135cf84ecf1c75fd670d1a1/61375716bfa69365be757b67_favorite.png"
-                            loading="lazy" width="41" alt="" class="image-13" />
+                        <img src="/images/favorite.png" loading="lazy" width="41" alt="" class="image-13" />
                     </div>
                     <div class="productinformation">
                         <h4 class="productcardtitle">{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</h4>
@@ -42,6 +41,11 @@
             @endforeach
 
         </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        {{ $products->links() }}
     </div>
 </div>
 @endsection

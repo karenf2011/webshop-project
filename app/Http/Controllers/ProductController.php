@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\TimePeriod;
-use Facade\FlareClient\Time\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -67,6 +67,8 @@ class ProductController extends Controller
 
         return view('products.index', [
             'products' => $products
+            //'products'      => Product::paginate(6),
+            'categories'    => Category::all()->whereNotin('id', 1),
         ]);
       
     
@@ -126,6 +128,7 @@ class ProductController extends Controller
 
         return view('products.show', [
             'product'           => $product,
+            'categories'        => Category::all()->whereNotin('id', 1),
             'cart'              => $session,
             'relatedProducts'   => $timePeriod->products->take(3),
         ]);
@@ -164,16 +167,14 @@ class ProductController extends Controller
     {
         //
     }
+  
+//     public function search(Request $request) 
+//     {
+//         $query = $request->searchresults; 
 
-    // public function search(Request $request) 
-    // {
-        
-    //         $query = $request->searchresults; 
-
-    //         $products = Product::search($query)->get();
-
-    //         return view('/search/search', [
-    //             'products'   => $products,
-    //         ]);
-    // }
+//         return view('search.search', [
+//             'categories'    => Category::all()->whereNotin('id', 1),
+//             'products'      => Product::search($query)->get(),
+//         ]);
+//     }
 }

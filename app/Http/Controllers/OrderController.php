@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderProducts;
 use App\Models\Product;
@@ -38,11 +39,12 @@ class OrderController extends Controller
         }
 
         return view('orders.form', [
-            'products'  => Product::whereIn('id', $sessionKeys)->get(),
-            'cart'      => $session,
-            'total'     => Product::getTotal($session),
-            'action'    => route('orders.store'),
-            'method'    => 'POST',
+            'categories'    => Category::all()->whereNotin('id', 1),
+            'products'      => Product::whereIn('id', $sessionKeys)->get(),
+            'cart'          => $session,
+            'total'         => Product::getTotal($session),
+            'action'        => route('orders.store'),
+            'method'        => 'POST',
         ]);
     }
 
@@ -79,6 +81,7 @@ class OrderController extends Controller
         
         $order = Order::create([
                     'user_id'       => $user->id,
+                    'status'        => 'In behandeling',
                     'subtotal'      => Product::getTotal($session),
                     'total'         => Product::getTotal($session),
                 ]);
@@ -108,8 +111,8 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         return view('orders.details', [
-            'order'     => $order,
-
+            'order'         => $order,
+            'categories'    => Category::all()->whereNotin('id', 1),
         ]);
     }
 
