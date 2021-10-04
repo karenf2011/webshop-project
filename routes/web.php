@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', [HomeController::class, 'index'])->name('root');
 Route::get('home', [HomeController::class, 'index'])->name('home');
@@ -36,18 +38,13 @@ Route::post('cart/delete', [CartController::class, 'delete'])->name('cart.delete
 
 Route::resource('orders', OrderController::class);
 
-// USER
-// Route::get('/user/signup', function () {
-//     return view('/user/registerpage');
-// });
+Route::resource('user', UserController::class);
+Route::get('profile', [ProfileController::class, 'index'])->name('profile')->middleware('verified');
+Route::post('profile/info', [ProfileController::class, 'info'])->name('profile.info');
+Route::post('profile/orders', [ProfileController::class, 'orders'])->name('profile.orders');
+Route::post('profile/wishlist', [ProfileController::class. 'wishlist'])->name('profile.wishlist');
 
-// Route::get('/user/login', function () {
-//     return view('/user/loginpage');
-// });
-
-// SUPPORT
 
 Route::get('/support', function () {
     return view('/support/supportpage');
 });
-
