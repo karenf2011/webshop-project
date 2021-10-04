@@ -185,10 +185,10 @@
   margin-bottom: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
-  
   color: #000;
   font-size: 25px;
   text-decoration: none;
+  border-top: solid;
 }
 
 .link-block {
@@ -5229,4 +5229,114 @@ a:hover {
 
 #bestelling {
   margin-bottom: 40px;
+}
+
+// PRICE SLIDER
+
+.price-slider{
+  position: relative; 
+  width: 200px;
+  // margin: 0 auto 20px; 
+  // height: 35px; 
+  text-align: center;
+  .price-slider-range {
+    pointer-events: none;
+    position: absolute;
+    appearance: none;
+    background: transparent;
+    left: -5px;
+    top: 40px; 
+    width: 110%;
+    z-index: 10;
+    -webkit-appearance: none;
+
+    &:focus{
+      outline: 0; 
+    }
+    &:hover{
+      cursor: pointer;
+    }
+    
+    &::-webkit-slider-thumb{ 
+      -webkit-appearance: none;       
+      pointer-events: all; 
+      position: relative; 
+      height: 24px;
+      width: 24px; 
+      border-radius: 12px;
+      background: #000;
+    }
+    &::-moz-range-thumb{
+      -moz-appearance: none;
+      pointer-events: all; 
+      position: relative; 
+      height: 24px;
+      width: 24px; 
+      border-radius: 12px; 
+      border: none;
+      background: #000;
+    }
+  }
+}
+.price-progress{
+  position: absolute;
+  display: flex;
+  top: 50px;
+  width: 100%;
+  height: 5px;
+  border: 1px solid black;
+  --max: 0;
+  --min: 0;
+  --full: 50000;
+  background-color: rgb(0, 0, 0);
+  &::before{
+    content: "";
+    width: calc((var(--min)/var(--full)) * 100%);
+    background-color: #FFF;
+  }
+  &::after{
+    content: "";
+    width: calc((var(--max) - var(--min)) / var(--full) * 100%);
+    background-color: #000;
+  }
+}
+
+#filterbutton {
+  padding: 8px 15px;
+  background-color: #000;
+  font-weight: 700;
+  color: white;
+  border: none;
+  margin-top: 40px;
+}
+
+.filterwrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.pricefilter {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left:5px;
+}
+
+// ordercomplete page
+
+.ordercompletecontainer {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  display: flex;
+  flex-direction: column;
+ 
+  align-items: center;
+  height: 82vh;
+}
+
+.ordercompletemessage {
+  margin-top: 10vh;
+}
+.ordercompleteinfo {
+  margin-top: 10vh;
 }

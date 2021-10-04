@@ -8,6 +8,8 @@ use App\Models\TimePeriod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+use function Psy\debug;
+
 class ProductController extends Controller
 {
      /**
@@ -25,15 +27,65 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        $searchquery = $request->input('searchquery');
+        $min_price = $request->input('min_price');
+        $max_price = $request->input('max_price');
+        
+
+        $products = Product::all();
+
+        if($request->searchquery){
+            
+            $products = Product::search($searchquery)->get();
+        }
+
+
+        if($request->min_price or $request->max_price){
+           
+           $products = $products->whereBetween('price', [$min_price, $max_price]);
+                
+                $request->session()->put('max_price', $max_price);
+                $request->session()->put('min_price', $min_price);
+           
+        }
+
+        if($request->sort == 'price_asc'){
+            
+            $products = $products
+                ->sortBy('price');
+              
+        }
+        else if($request->sort == 'price_dcs'){
+                
+            $products = $products->sortByDesc('price');
+            
+        }
+
+
         return view('products.index', [
-            'products'      => Product::paginate(6),
+            'products' => $products
+            //'products'      => Product::paginate(6),
             'categories'    => Category::all()->whereNotin('id', 1),
         ]);
-
+      
+    
     }
 
+    // public function filterProducts(Request $request)
+
+    // {
+    //     $min = $request->input('min-price');
+    //     $max = $request->input('max-price');
+
+    //     return view('products.index', [
+    //         'products'  =>   Product::whereBetween('price', [$min, $max])
+    //         ->get()
+    //     ]);   
+     
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -62,6 +114,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+
     public function show(Product $product)
     {
         // dd(session('cart'));
@@ -114,14 +167,14 @@ class ProductController extends Controller
     {
         //
     }
+  
+//     public function search(Request $request) 
+//     {
+//         $query = $request->searchresults; 
 
-    public function search(Request $request) 
-    {
-        $query = $request->searchresults; 
-
-        return view('search.search', [
-            'categories'    => Category::all()->whereNotin('id', 1),
-            'products'      => Product::search($query)->get(),
-        ]);
-    }
+//         return view('search.search', [
+//             'categories'    => Category::all()->whereNotin('id', 1),
+//             'products'      => Product::search($query)->get(),
+//         ]);
+//     }
 }
