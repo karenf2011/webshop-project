@@ -81,6 +81,7 @@ class OrderController extends Controller
         
         $order = Order::create([
                     'user_id'       => $user->id,
+                    'status'        => 'In behandeling',
                     'subtotal'      => Product::getTotal($session),
                     'total'         => Product::getTotal($session),
                 ]);

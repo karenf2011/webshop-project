@@ -40,8 +40,11 @@ Route::resource('orders', OrderController::class);
 
 Route::resource('user', UserController::class);
 Route::get('profile', [ProfileController::class, 'index'])->name('profile')->middleware('verified');
+Route::post('profile/info', [ProfileController::class, 'info'])->name('profile.info');
+Route::post('profile/orders', [ProfileController::class, 'orders'])->name('profile.orders');
+Route::post('profile/wishlist', [ProfileController::class. 'wishlist'])->name('profile.wishlist');
+
 
 Route::get('/support', function () {
     return view('/support/supportpage');
 });
-
