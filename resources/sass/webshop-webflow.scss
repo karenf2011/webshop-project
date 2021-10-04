@@ -5340,3 +5340,21 @@ a:hover {
 .ordercompleteinfo {
   margin-top: 10vh;
 }
+
+.brandfield {
+display: flex;
+justify-content: space-around;
+}
+
+.brand {
+  display: flex;
+}
+
+#brandcheckbox {
+  margin-right: 5px
+}
+
+.filterbutton {
+  display: flex;
+  justify-content: center;
+}

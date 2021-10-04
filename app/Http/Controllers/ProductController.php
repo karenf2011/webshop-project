@@ -56,20 +56,45 @@ class ProductController extends Controller
             
             $products = $products
                 ->sortBy('price');
-              
         }
         else if($request->sort == 'price_dcs'){
                 
-            $products = $products->sortByDesc('price');
-            
+            $products = $products
+                ->sortByDesc('price');
         }
 
+        //BRANDS
+        if ($request->brand == 'italla'){
+            
+            $products = $products
+                ->where('brand_id', 1);
+        }
+        if ($request->brand == 'ittala-ultima'){
+            
+            $products = $products
+                ->where('brand_id', 2);
+        }
+        if ($request->brand == 'arabia-artica'){
+            
+            $products = $products
+                ->where('brand_id', 3);
+        }
+        if ($request->brand == 'arabia-lumi'){
+            
+            $products = $products
+                ->where('brand_id', 4);
+        }
+        if ($request->brand == 'marimekko'){
+            
+            $products = $products
+                ->where('brand_id', 5);
+        }
+    
 
         return view('products.index', [
             'products' => $products
         ]);
-      
-    
+
     }
 
     // public function filterProducts(Request $request)
