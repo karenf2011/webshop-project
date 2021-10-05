@@ -17,7 +17,8 @@ class CartController extends Controller
      */
     public function index()
     {
-       if (session::exists('cart')) {
+        $sessionKeys = [];
+        if (session::exists('cart')) {
             $session = session::get('cart');
             $sessionKeys = array_keys($session);
         } else {
@@ -71,8 +72,9 @@ class CartController extends Controller
     {
         try {
             $session = session::get('cart');
+            $productStock = Product::findOrFail($request->product_id)->stock;
 
-            if ($request->quantity > 0) {
+            if ($request->quantity > 0 && $request->quantity <= $productStock) {
                 $session[$request->product_id] = $request->quantity;
                 session::put('cart', $session);
 
