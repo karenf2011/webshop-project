@@ -21,17 +21,43 @@
                         <option value="price_dcs">Prijs aflopend</option>
                     </select>
                    
-                    <!-- <input type="submit" name="price_dcs"  class="w-dropdown-link" value="Nieuwste"> -->
-                    
-                    <!-- <a href="{{url()->full().'?sort=price_asc'}}" class="w-dropdown-link">Prijs oplopend</a>
-                    <a href="{{url()->full().'?sort=price_dcs'}}" class="w-dropdown-link">Prijs aflopend</a>
-                    <a href="{{url()->full().'?sort=newest'}}" class="w-dropdown-link">Nieuwste</a> -->
                 </nav>
             </div>
         </div>
     </div>
     <div class="productcontainer w-container">
         <div class="filterwrapper">
+            <div class="brands">
+                <div class="brandfield">
+                    <div class="brand">
+                        <input type="checkbox" id="brandcheckbox" name="brand" value="italla">
+                        <label for="vehicle1"> Italla</label>
+                    </div>
+                    <div class="brand">
+                        <input type="checkbox" id="brandcheckbox" name="brand" value="ittala-ultima">
+                        <label for="vehicle1"> Italla ultima</label>
+                    </div>
+                    <div class="brand">
+                        <input type="checkbox" id="brandcheckbox" name="brand" value="arabia-artica">
+                        <label for="vehicle1"> Arabia artica</label>
+                    </div>
+              
+                </div>
+                
+                <div class="brandfield">
+                    <div class="brand">
+                        <input type="checkbox" id="brandcheckbox" name="brand" value="arabia-lumi">
+                        <label for="vehicle1"> Arabia lumi</label>
+                    </div>
+                    <div class="brand">
+                        <input type="checkbox" id="brandcheckbox" name="brand" value="marimekko">
+                        <label for="vehicle1"> Marimekko</label>
+                    </div>
+                </div>
+                
+        
+            </div>
+          
             <div class="pricefilter">
                 <div class="price-slider">
   
@@ -60,14 +86,17 @@
                            
                     
                     <div class="price-progress" id="price-progress"></div>
-                    <input type="submit" value="Filter" id="filterbutton">
+                  
                     
                   </div> 
-                </form>
+                
             </div>
        
         </div>
-
+        <div class="filterbutton">
+            <input type="submit" value="Filter" id="filterbutton">
+        </div>
+    </form>
         <div class="w-layout-grid productpagegrid">
 
             @foreach ($products as $product)
