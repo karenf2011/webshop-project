@@ -93,11 +93,11 @@
         
     </div>
 </div>
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         {{ $products->links() }}
     </div>
-</div>
+</div> --}}
  <script>
  slider();
 
