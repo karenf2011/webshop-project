@@ -26,9 +26,9 @@ class HomeController extends Controller
     public function index()
     {        
         if (session::exists('cart')) {
-            $session = session::get('cart');
+            session::get('cart');
         } else {
-            $session = session::put('cart', []);
+            session::put('cart', []);
         }
 
         return view('home', [

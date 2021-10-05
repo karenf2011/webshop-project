@@ -42,8 +42,9 @@
                     <div class="text-block-11">Totaal : <span class="text-span-3">€
                             {{ $total }}</span><br>‍<br>Leveringstijd: 3-5 dagen <br><br><br><br><br></div>
                     <div class="div-block-60">
-                        <a href="{{ route('orders.create') }}"
-                            class="button-4 w-button">UITCHECKEN</a>
+                    @if ($total > 0)
+                        <a href="{{ route('orders.create') }}" class="button-4 w-button">UITCHECKEN</a>
+                    @endif
                         <a href="{{ route('products.index') }}" class="button-4 w-button">VERDER WINKELEN</a>
                     </div>
                     <div class="div-block-64"><img src="images/ideal-logo.svg" loading="lazy" width="84" alt=""

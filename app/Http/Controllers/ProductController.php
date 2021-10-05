@@ -8,8 +8,6 @@ use App\Models\TimePeriod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-use function Psy\debug;
-
 class ProductController extends Controller
 {
      /**
@@ -93,8 +91,7 @@ class ProductController extends Controller
 
         return view('products.index', [
             'products'      => $products,
-            //'products'      => Product::paginate(6),
-            // 'categories'    => Category::all()->whereNotin('id', 1),
+            'categories'    => Category::all()->whereNotin('id', 1),
         ]);
 
     }

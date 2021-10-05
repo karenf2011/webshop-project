@@ -17,17 +17,24 @@ class CartController extends Controller
      */
     public function index()
     {
-        $sessionKeys = [];
         if (session::exists('cart')) {
             $session = session::get('cart');
             $sessionKeys = array_keys($session);
         } else {
             $session = session::put('cart', []);
+            $session = session::get('cart');
+            $sessionKeys = array_keys($session);
+        }
+
+        if (isset($sessionKeys)) {
+            $products = Product::whereIn('id', $sessionKeys)->get();
+        } else {
+            $products = [];
         }
         
         return view('cart', [
             'categories'    => Category::all()->whereNotin('id', 1),
-            'products'      => Product::whereIn('id', $sessionKeys)->get(),
+            'products'      => $products,
             'cart'          => $session,
             'total'         => Product::getTotal($session),
         ]);
