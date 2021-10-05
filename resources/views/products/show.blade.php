@@ -42,7 +42,12 @@
             @endforeach
             <h5>Op voorraad: {{ $product->stock }}</h5>
             <h4>Prijs : € {{ $product->price }}</h4>
-            <a href="{{ route('cart') }}" id="addcartbutton" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO CART</a>
+            @if ($product->stock > 0)
+                <a href="{{ route('cart') }}" id="addcartbutton" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO CART</a>
+            @else
+                <a href="#" id="addtowishlist" class="button-4 w-button add-to-cart" p_id="{{ $product->id }}">ADD TO WISHLIST</a>
+            @endif
+            
 
         </div>
     </div>
