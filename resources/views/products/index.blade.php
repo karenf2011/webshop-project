@@ -122,33 +122,28 @@
         
     </div>
 </div>
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        {{ $products->links() }}
-    </div>
-</div> --}}
- <script>
- slider();
+<script>
+slider();
 
 
 function slider(){
-  const range = document.getElementsByClassName('price-slider-range');
-  const min = Math.min(range[0].value, range[1].value);
-  const max = Math.max(range[0].value, range[1].value);
-  document.getElementById('price-slider-paragraph').innerHTML = `€ ${min} - € ${max}`;
+const range = document.getElementsByClassName('price-slider-range');
+const min = Math.min(range[0].value, range[1].value);
+const max = Math.max(range[0].value, range[1].value);
+document.getElementById('price-slider-paragraph').innerHTML = `€ ${min} - € ${max}`;
 
-  const progress = document.getElementById('price-progress');
-  progress.style.setProperty('--max', max);
-  progress.style.setProperty('--min', min);
+const progress = document.getElementById('price-progress');
+progress.style.setProperty('--max', max);
+progress.style.setProperty('--min', min);
 }
 
 const range = document.querySelectorAll('input[type=range]')
 
 range.forEach((r)=>{
-  r.addEventListener('mousemove', ()=>{
-    slider();
-  })
+r.addEventListener('mousemove', ()=>{
+slider();
+})
 })
 
- </script>
+</script>
 @endsection

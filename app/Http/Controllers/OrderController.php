@@ -9,11 +9,21 @@ use App\Models\OrderProducts;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
 
 class OrderController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,11 +46,20 @@ class OrderController extends Controller
             $sessionKeys = array_keys($session);
         } else {
             $session = session::put('cart', []);
+            $session = session::get('cart');
+            $sessionKeys = array_keys($session);
+        }
+
+        if (isset($sessionKeys)) {
+            $products = Product::whereIn('id', $sessionKeys)->get();
+        } else {
+            $products = [];
         }
 
         return view('orders.form', [
             'categories'    => Category::all()->whereNotin('id', 1),
-            'products'      => Product::whereIn('id', $sessionKeys)->get(),
+            'user'          => Auth::user(),
+            'products'      => $products,
             'cart'          => $session,
             'total'         => Product::getTotal($session),
             'action'        => route('orders.store'),
@@ -57,30 +76,32 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $session = session::get('cart');
+        $userId = Auth::id();
 
-        $user = User::create([
-                    'role_id'           => 2,
-                    'first_name'        => $request->input('first_name'),
-                    'last_name'         => $request->input('last_name'),
-                    'email'             => $request->input('email'),
-                    'email_verified_at' => now(),
-                    'password'          => bcrypt('wachtwoord123'),
-                    'phone_number'      => $request->input('phone_number'),
-                    'remember_token'    => Str::random(10),
-                ]);
-
-        Address::create([
-            'user_id'           => $user->id,
-            'first_name'        => $request->input('first_name'),
-            'last_name'         => $request->input('last_name'),
-            'street_address'    => $request->input('street_address'),
-            'postal_code'       => $request->input('postal_code'),
-            'city'              => $request->input('city'),
-            'country'           => $request->input('country'),
+        $validatedData = $request->validate([
+            'phone_number'      => ['required', 'string', 'max:255'],
+            'street_address'    => ['required', 'string', 'max:255'],
+            'postal_code'       => ['required', 'string', 'max:255'],
+            'city'              => ['required', 'string', 'max:255'],
+            'country'           => ['required', 'string', 'max:255'],
         ]);
+
+        if (Auth::user()->phone_number === NULL) {
+            User::where('id', $userId)->update(['phone_number' => $validatedData['phone_number']]);
+        }
+
+        if (empty(Auth::user()->addresses[0])) {
+            Address::create([
+                'user_id'           => $userId,
+                'street_address'    => $validatedData['street_address'],
+                'postal_code'       => $validatedData['postal_code'],
+                'city'              => $validatedData['city'],
+                'country'           => $validatedData['country'],
+            ]);
+        }
         
         $order = Order::create([
-                    'user_id'       => $user->id,
+                    'user_id'       => $userId,
                     'status'        => 'In behandeling',
                     'subtotal'      => Product::getTotal($session),
                     'total'         => Product::getTotal($session),
@@ -95,6 +116,8 @@ class OrderController extends Controller
                 'quantity'      => $quantity,
                 'price'         => $product->price,
             ]);
+            $newStock = $product->stock - $quantity;
+            Product::findOrFail($product_id)->update(['stock' => $newStock]);
         }
 
         $session = session::put('cart', []);

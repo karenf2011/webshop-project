@@ -36,7 +36,7 @@ Route::post('cart', [CartController::class, 'store'])->name('cart.store');
 Route::post('cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('cart/delete', [CartController::class, 'delete'])->name('cart.delete');
 
-Route::resource('orders', OrderController::class);
+Route::resource('orders', OrderController::class)->middleware('verified');
 
 Route::resource('user', UserController::class);
 Route::get('profile', [ProfileController::class, 'index'])->name('profile')->middleware('verified');
