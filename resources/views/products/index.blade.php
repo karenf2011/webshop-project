@@ -125,7 +125,6 @@
 <script>
 slider();
 
-
 function slider(){
 const range = document.getElementsByClassName('price-slider-range');
 const min = Math.min(range[0].value, range[1].value);
