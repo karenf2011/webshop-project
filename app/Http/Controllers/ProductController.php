@@ -66,7 +66,7 @@ class ProductController extends Controller
 
 
         return view('products.index', [
-            'products' => $products
+            'products'      => $products,
             //'products'      => Product::paginate(6),
             'categories'    => Category::all()->whereNotin('id', 1),
         ]);
