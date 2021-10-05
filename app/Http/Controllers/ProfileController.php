@@ -121,7 +121,6 @@ class ProfileController extends Controller
                 'message'   => $e->getMessage(),
             ]);
         }
-
     }
 
     public function wishlist()

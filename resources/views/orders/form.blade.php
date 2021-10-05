@@ -3,7 +3,6 @@
 @section('content')
 <div class="checkoutcontainer">
     <div class="checkoutgrid">
-        
         <div class="checkoutform">
             <h3 class="mb-4">Gegevens</h3>
             <form action="{{ $action }}" method={{ $method }}>
@@ -63,27 +62,25 @@
                         <input type="text" name="country" maxlength="255" required>
                     </label>
                 @endif
-        </div>
+            </div>
 
-        <div class="checkoutitems">
-            <h3 id="bestelling">Bestelling</h3>
-            <ul>
-                @foreach($products as $product)
-                <li id="{{ $product->id }}">
-                    <p>{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</p>
-                    <p>Aantal: {{ $cart[$product->id] }}</p>
-                    <p>Prijs: € {{ $product->price }} p.s.</p>
-                </li>
-                @endforeach
-                <h4 id="checkouttotal">Totaal: € {{ $total }}</h4>
-            </ul> 
-            @if ($total > 0)
-                <button type="submit" id="orderbutton" class="button-4 w-button">PLAATS ORDER</button>
-            @endif 
-        </div>
-       
-        </form>  
-       
-</div>
+            <div class="checkoutitems">
+                <h3 id="bestelling">Bestelling</h3>
+                <ul>
+                    @foreach($products as $product)
+                    <li id="{{ $product->id }}">
+                        <p>{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</p>
+                        <p>Aantal: {{ $cart[$product->id] }}</p>
+                        <p>Prijs: € {{ $product->price }} p.s.</p>
+                    </li>
+                    @endforeach
+                    <h4 id="checkouttotal">Totaal: € {{ $total }}</h4>
+                </ul> 
+                @if ($total > 0)
+                    <button type="submit" id="orderbutton" class="button-4 w-button">PLAATS ORDER</button>
+                @endif 
+            </div>
+            </form>  
+    </div>
 </div>
 @endsection
