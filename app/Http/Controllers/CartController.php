@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Exception;
 use Illuminate\Http\Request;
@@ -24,9 +25,10 @@ class CartController extends Controller
         }
         
         return view('cart', [
-            'products'  => Product::whereIn('id', $sessionKeys)->get(),
-            'cart'      => $session,
-            'total'     => Product::getTotal($session),
+            'categories'    => Category::all()->whereNotin('id', 1),
+            'products'      => Product::whereIn('id', $sessionKeys)->get(),
+            'cart'          => $session,
+            'total'         => Product::getTotal($session),
         ]);
     }
 

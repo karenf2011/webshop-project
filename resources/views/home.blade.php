@@ -6,7 +6,7 @@
 <div class="homecontentsection wf-section">
     
     <div class="homecontentcontainer w-container">
-        <div class="homecontenmain"><img src="images/Piet_Mondriaan_-_03.jpeg" loading="lazy"
+        <div class="homecontenmain"><img src="{{ asset('Piet_Mondriaan_-_03.jpeg') }}" loading="lazy"
                 sizes="(max-width: 479px) 90vw, 70vw"
                 srcset="images/Piet_Mondriaan_-_03-p-500.jpeg 500w, images/Piet_Mondriaan_-_03-p-800.jpeg 800w, images/Piet_Mondriaan_-_03-p-1080.jpeg 1080w, images/Piet_Mondriaan_-_03.jpeg 1131w"
                 alt="" class="image-4">
@@ -23,9 +23,9 @@
                 @foreach($featured as $feature)
                     <a href="{{ route ('products.show', $feature) }}">
                     <div class="productcard">
-                            <div class="productimage"><img src="{{ url($feature->images->first()->img_path) }}"
+                            <div class="productimage"><img src="{{ asset($feature->images->first()->img_path) }}"
                                     loading="lazy" sizes="(max-width: 479px) 90vw, (max-width: 767px) 67vw, 70vw"
-                                    srcset="{{ url($feature->images->first()->img_path) }}, {{ url($feature->images->first()->img_path) }}"
+                                    srcset="{{ asset($feature->images->first()->img_path) }}, {{ asset($feature->images->first()->img_path) }}"
                                     alt="" class="image-11"><img src="images/favorite.png" loading="lazy" width="41" alt=""
                                     class="image-13"></div>
                             <div class="productinformation">
