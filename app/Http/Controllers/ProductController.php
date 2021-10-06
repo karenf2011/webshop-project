@@ -53,18 +53,11 @@ class ProductController extends Controller
            
         }
 
-        if($request->brand){
-           
-            dd($request->brand);
-            foreach($request->brand as $brand) {
-               
-                $products->whereIn('brand_id', [$brand]);
-                
-                }
+        if($request->brand){      
             
+            $products = $products->whereIn('brand_id', $request->brand);
+                
         }
-  
-
         //BRANDS
         // if ($request->brand == 'ittala'){
             
