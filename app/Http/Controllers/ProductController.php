@@ -33,6 +33,7 @@ class ProductController extends Controller
         $searchquery = $request->input('searchquery');
         $min_price = $request->input('min_price');
         $max_price = $request->input('max_price');
+        $sort = $request->input('sort');
         
         $products = Product::all();
 
@@ -61,8 +62,10 @@ class ProductController extends Controller
             
             $products = $products
                 ->sortBy('price');
+               
+                $request->session()->put('sort', $sort);
+                $request->session()->get('sort');
 
-                $request->session()->put('sort', 'price_asc');
         }
 
         else if($request->sort == 'price_dcs'){
@@ -70,13 +73,15 @@ class ProductController extends Controller
             $products = $products
                 ->sortByDesc('price');
 
-                $request->session()->put('sort', 'price_dcs');
+                $request->session()->put('sort', $sort);
+                $request->session()->get('sort');
         }
 
         return view('products.index', [
             'products'      => $products,
             'brands'        => Brand::all(), 
             'categories'    => Category::all()->whereNotin('id', 1),
+            
         ]);
     }
 
