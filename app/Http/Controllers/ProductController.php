@@ -13,16 +13,6 @@ use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
-     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      *
@@ -30,6 +20,13 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        if (!session::exists('max_price')) {
+            session::put('max_price', '200');
+        }
+        if (!session::exists('min_price')) {
+            session::put('min_price', '0');
+        }
+
         $searchquery = $request->input('searchquery');
         $min_price = $request->input('min_price');
         $max_price = $request->input('max_price');
@@ -37,44 +34,32 @@ class ProductController extends Controller
         
         $products = Product::all();
 
-        if($request->searchquery){
-            
+        if ($request->searchquery) {
             $products = Product::where('name', 'LIKE', "%$searchquery%")
-            ->orWhere('slug', 'LIKE', "%$searchquery%")
-            ->get();
+                ->orWhere('slug', 'LIKE', "%$searchquery%")
+                ->get();
         }
 
-
-        if($request->min_price or $request->max_price){
-           
-           $products = $products->whereBetween('price', [$min_price, $max_price]);
-                
-                $request->session()->put('max_price', $max_price);
-                $request->session()->put('min_price', $min_price);
+        if ($request->min_price or $request->max_price) {
+            $products = $products->whereBetween('price', [$min_price, $max_price]);
+            $request->session()->put('max_price', $max_price);
+            $request->session()->put('min_price', $min_price);
         }
 
-        if($request->brand){      
-
+        if ($request->brand) {      
             $products = $products->whereIn('brand_id', $request->brand);
         }
   
-        if($request->sort == 'price_asc'){
-            
-            $products = $products
-                ->sortBy('price');
-               
-                $request->session()->put('sort', $sort);
-                $request->session()->get('sort');
-
+        if ($request->sort == 'price_asc') {
+            $products = $products->sortBy('price');
+            $request->session()->put('sort', $sort);
+            $request->session()->get('sort');
         }
 
-        else if($request->sort == 'price_dcs'){
-                
-            $products = $products
-                ->sortByDesc('price');
-
-                $request->session()->put('sort', $sort);
-                $request->session()->get('sort');
+        else if ($request->sort == 'price_dcs') {
+            $products = $products->sortByDesc('price');
+            $request->session()->put('sort', $sort);
+            $request->session()->get('sort');
         }
 
         if (Auth::id() !== NULL) {
@@ -128,7 +113,6 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        // dd(session('cart'));
         if (session::exists('cart')) {
             $session = session::get('cart');
         } else {

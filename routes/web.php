@@ -38,8 +38,6 @@ Route::post('cart/delete', [CartController::class, 'delete'])->name('cart.delete
 
 Route::resource('orders', OrderController::class)->middleware('verified');
 
-Route::resource('user', UserController::class);
-
 Route::post('wishlist', [ProfileController::class, 'store'])->name('wishlist.store');
 Route::post('delete', [ProfileController::class, 'delete'])->name('wishlist.delete');
 
@@ -48,6 +46,7 @@ Route::post('profile/info', [ProfileController::class, 'info'])->name('profile.i
 Route::post('profile/orders', [ProfileController::class, 'orders'])->name('profile.orders');
 Route::post('profile/wishlist', [ProfileController::class. 'wishlist'])->name('profile.wishlist');
 
+// Route::resource('user', UserController::class);
 
 // Route::get('/support', function () {
 //     return view('/support/supportpage');

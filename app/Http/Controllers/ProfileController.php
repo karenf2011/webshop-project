@@ -147,7 +147,7 @@ class ProfileController extends Controller
                             'product_id'    => $productId,
                         ]);
 
-            $html = '<img src="images/passion.png" loading="lazy" width="41" alt="" class="image-13" />';
+            $html = '<img src="/images/passion.png" loading="lazy" width="41" alt="" class="image-13" />';
 
             return response()->json([
                 'success'   => true,
@@ -176,7 +176,7 @@ class ProfileController extends Controller
 
             Wishlist::where('id', $wishlistId)->delete();
 
-            $html = '<img src="images/favorite.png" loading="lazy" width="41" alt="" class="image-13" />';
+            $html = '<img src="/images/favorite.png" loading="lazy" width="41" alt="" class="image-13" />';
 
             return response()->json([
                 'success'       => true,

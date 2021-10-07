@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -46,10 +48,24 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        if (Auth::id() !== NULL) {
+            $userId = Auth::id();
+            $wishlist = User::findOrFail($userId)->wishlist;
+
+            if ($wishlist->isEmpty()) {
+                $wishlist = false;
+            } else {
+                $wishlist = $wishlist;
+            }
+        }  else {
+            $wishlist = false;
+        }
+
         return view('categories.show', [
-            'products'      => $category->products()->paginate(6),
+            'products'      => $category->products,
             'category'      => $category,
             'categories'    => Category::all()->whereNotin('id', 1),
+            'wishlist'      => $wishlist,
         ]);
     }
 

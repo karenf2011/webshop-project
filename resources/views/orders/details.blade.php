@@ -3,12 +3,10 @@
 @section('content')
 
 <div class="ordercompletecontainer">
-
     <div class="ordercompletemessage">
         <h1>Bedankt voor je bestelling {{$order->user->first_name}} {{$order->user->last_name}}!</h1>
         <h4>Je ontvangt een bevestiging op: {{$order->user->email}}.</h4>
     </div>
-
     <div class="ordercompletebox">
         <div class="ordercompleteinfo">
             <h2>Bestelling</h2>
@@ -23,11 +21,7 @@
                 <h3>Total: € {{ $order->total }}</h3>
             </ul>  
         </div>
-
-
-
     </div>
-
 </div>
 
 @endsection

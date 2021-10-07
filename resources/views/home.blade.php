@@ -23,7 +23,6 @@
                             <img src="{{ asset($feature->images->first()->img_path) }}" loading="lazy" sizes="(max-width: 479px) 90vw, 
                                 (max-width: 767px) 67vw, 70vw" srcset="{{ asset($feature->images->first()->img_path) }}, 
                                 {{ asset($feature->images->first()->img_path) }}" alt="" class="image-11">
-                            <img src="images/favorite.png" loading="lazy" width="41" alt="" class="image-13">
                         </div>
                         <div class="productinformation">
                             <h4 class="productcardtitle">{{ $feature->brand->name }} {{ $feature->brand->line }} {{ $feature->name }}</h4>

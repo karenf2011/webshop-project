@@ -3,21 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    // public function __construct()
-    // {
-    //     // $this->middleware('auth');
-    // }
-
     /**
      * Show the application dashboard.
      *
@@ -30,7 +19,7 @@ class HomeController extends Controller
         } else {
             session::put('cart', []);
         }
-
+        
         return view('home', [
             'featured'      => Category::first()->products,
             'categories'    => Category::all()->whereNotin('id', 1),
