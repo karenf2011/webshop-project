@@ -1191,8 +1191,13 @@
   top: 0%;
   right: 0%;
   bottom: 0%;
-  
+  margin-top: 10px;
+}
 
+select {
+  padding:10px;
+  border-width: 3px;
+  border-color: black;
 }
 
 .dropdown-toggle-2 {
@@ -1649,8 +1654,7 @@
 
 .button-4 {
   margin-right:20px;
-  // min-width:160px;
-  width: 30vw;
+  min-width:160px;
   background-color: #000;
   color: white !important;
   font-weight: 700;
@@ -3746,10 +3750,14 @@ a {
 
 @media screen and (max-width: 479px) {
 
+  .button-4 {
+    min-width: 0px;
+    margin-top: 0;
+  }
+
   .checkoutform form {
     width: 90% !important;
   }
-
 
   .checkoutgrid {
     grid-template-columns: 1fr !important;

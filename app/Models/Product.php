@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sqits\UserStamps\Concerns\HasUserStamps;
 
-use Laravel\Scout\Searchable;
-
 class Product extends Model
 {
-    use HasFactory, HasUserStamps, SoftDeletes, Searchable;
+    use HasFactory, HasUserStamps, SoftDeletes;
 
     protected $table = 'products';
 
@@ -20,11 +18,6 @@ class Product extends Model
     ];
 
     protected $with = ['brand', 'categories', 'time_period', 'images'];
-    
-    public function searchableAs()
-    {
-        return 'posts_index';
-    }
     
     public function brand()
     {
@@ -41,10 +34,10 @@ class Product extends Model
         return $this->belongsToMany(Category::class, 'product_categories');
     }
 
-    public function userWishlist()
-    {
-        return $this->belongsToMany(User::class, 'wishlist');
-    }
+    // public function userWishlist()
+    // {
+    //     return $this->belongsToMany(User::class, 'wishlist');
+    // }
 
     public function images()
     {
