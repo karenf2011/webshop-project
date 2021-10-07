@@ -42,6 +42,10 @@
                 </div>
                 <div class="col-4">
                     <a href="#" class="btn btn-light">Bewerk Info</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-light" id="logout">Logout</button>
+                    </form>
                 </div>
             </div>
         

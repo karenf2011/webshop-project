@@ -57,6 +57,9 @@ class ProfileController extends Controller
             $html .= '</div>';
             $html .= '<div class="col-4">';
             $html .= '<a href="#" class="btn btn-light">Bewerk Info</a>';
+            $html .= '<form method="POST" action="' . route('logout') . '">';
+            $html .= '<input type="hidden" name="_token" value="' . csrf_token() . '" />';
+            $html .= '<button type="submit" class="btn btn-light" id="logout">Logout</button></form>';
             $html .= '</div>';
             $html .= '</div>';
 
@@ -105,7 +108,7 @@ class ProfileController extends Controller
             }
 
             if (empty($orders[0])) {
-                $html .= '<div>Je hebt nog geen bestellingen, kijk eens bij <a href="{{ route(products.index) }}"> onze producten</a>!</div>';
+                $html .= '<div>Je hebt nog geen bestellingen, kijk eens bij <a href="' . route('products.index') . '"> onze producten</a>!</div>';
             }
 
             return response()->json([
@@ -118,7 +121,6 @@ class ProfileController extends Controller
                 'message'   => $e->getMessage(),
             ]);
         }
-
     }
 
     public function wishlist()

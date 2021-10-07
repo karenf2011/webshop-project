@@ -54,49 +54,23 @@
                 </div>
                 <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
                     data-w-id="1a14cda4-99b7-9f49-27ae-dd14b965f0d2" alt="" class="image-16 mobile">
-
-                <div class="div-block-43">
-                    @auth
-                        <button><a href="">Profiel</a></button>
-                        <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" id="logout">Logout</button>
-                        </form>
-                    @endauth
-                    @guest
-                    <div class="form-block w-form">
-                        <form data-name="Email Form" method="POST" action="{{ route('login') }}">
-                        @csrf
-                            <label for="email">E-mailadres
-                            <input type="text" class="w-input" maxlength="256" name="email" data-name="Name 2" id="email" required>
-                            </label>
-                            <label for="password">Wachtwoord 
-                            <input type="password" class="w-input" maxlength="256" name="password" data-name="Email 2" id="password" required>
-                            </label>
-                            <button type="submit" id="login" class="submit-button w-button">Login</button>
-                            <div class="div-block-44">
-                            <a class="btn btn-link" href="{{ route('register') }}">
-                                    {{ __('Nog geen account?') }}
-                                </a>
-                            </div>
-                        </form>
-                        <div class="w-form-done">
-                            <div>Thank you! Your submission has been received!</div>
-                        </div>
-                        <div class="w-form-fail">
-                            <div>Oops! Something went wrong while submitting the form.</div>
-                        </div>
-                    </div>
-                    @endguest
-                </div>
             </div>
 
             <div class="navicons">
-            <a href="{{ route('login') }}" ><img src="/images/user.svg" loading="lazy" width="50"
-                    data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2"></a>
-                <a href="{{ route('cart') }}" class="cartblock w-inline-block"><img src="/images/shopping-cart.svg" loading="lazy"
-                        alt="" class="image"></a>
-
+            @auth
+                <a href="{{ route('profile') }}" >
+                    <img src="/images/user.svg" loading="lazy" width="50" data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2">
+                </a>
+            @endauth
+            @guest
+                <a href="{{ route('login') }}" >
+                    <img src="/images/user.svg" loading="lazy" width="50" data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2">
+                </a>
+            @endguest
+            
+                <a href="{{ route('cart') }}" class="cartblock w-inline-block">
+                    <img src="/images/shopping-cart.svg" loading="lazy" alt="" class="image">
+                </a>
             </div>
             <div data-hover="false" data-delay="0" class="dropdown-3 w-dropdown">
                 <div class="dropdown-toggle-5 w-dropdown-toggle"><img src="/images/meat.svg" loading="lazy" width="43"
