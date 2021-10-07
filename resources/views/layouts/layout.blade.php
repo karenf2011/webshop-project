@@ -21,8 +21,6 @@
         }(window, document);
     </script>
 
-    
-
     <script src="https://kit.fontawesome.com/b6927c2bb7.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -31,33 +29,26 @@
 
 <body class="body">
     <div class="navigationsection wf-section">
-
         <div class="div-block">
             <a href="{{ route('root') }}" class="logoblock w-inline-block">
                 <h1 class="logo">Glasswerk</h1>
             </a>
-
             <div class="div-block-67">
                 <div class="form-block-3 w-form">
                     <form id="email-form-2" class="form-2" method="GET" action="/products">
-                    
-                    <!-- <form id="email-form-2" class="form-2" method="GET" action="{{ route('search') }}"> -->
-                    
-                        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                         <input type="text" class="text-field-3 w-input" maxlength="256" placeholder="Zoek"
-                            name="searchquery" id="email-3"></form>
+                            name="searchquery" id="email-3">
+                    </form>
                     <div class="w-form-done">
                         <div>Thank you! Your submission has been received!</div>
                     </div>
                     <div class="w-form-fail">
                         <div>Oops! Something went wrong while submitting the form.</div>
                     </div>
-
                 </div>
                 <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
                     data-w-id="1a14cda4-99b7-9f49-27ae-dd14b965f0d2" alt="" class="image-16 mobile">
             </div>
-
             <div class="navicons">
             @auth
                 <a href="{{ route('profile') }}" >
@@ -69,7 +60,6 @@
                     <img src="/images/user.svg" loading="lazy" width="50" data-w-id="b84c3572-0a77-0be8-b4e9-2fd313b3b2c2" alt="" class="image-2">
                 </a>
             @endguest
-            
                 <a href="{{ route('cart') }}" class="cartblock w-inline-block">
                     <img src="/images/shopping-cart.svg" loading="lazy" alt="" class="image">
                 </a>
@@ -102,9 +92,7 @@
         <img src="/images/magnifying-glass.svg" loading="lazy" width="27"
             data-w-id="eb8485ed-8f1c-6c8f-5bae-751204e4765b" alt="" class="image-16">
     </div>
-    
     <div class="mobilesubmenu">
-
         <div class="w-embed">
         <style>
         .mobilesubmenu::-webkit-scrollbar {
@@ -115,7 +103,6 @@
         }
         </style>
         </div>
-
         <a href="{{ route('home') }}" class="link-block w-inline-block">
             <h4 class="heading">HOME</h4>
         </a>
@@ -129,7 +116,7 @@
         @endforeach
 </div>
 
-    @yield('content')
+@yield('content')
 
     <footer id="footer" class="footer wf-section">
         <div class="container-3 w-container">
@@ -180,8 +167,8 @@
             <div>Copyright © 2021 Glasswerk. All rights reserved.</div>
         </div>
     </footer>
+    
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('scripts')
 </body>
-
 </html>
