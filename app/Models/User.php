@@ -15,7 +15,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     protected $table = 'users';
 
-    protected $with = ['role', 'addresses', 'orders'];
+    protected $with = ['role', 'addresses', 'orders', 'wishlist'];
 
     protected $guarded = [
         'id'
@@ -43,5 +43,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function orders()
     {
         return $this->hasMany(Order::class, 'user_id');
+    }
+
+     public function productWishlist()
+    {
+        return $this->belongsToMany(Product::class, 'wishlist');
     }
 }
