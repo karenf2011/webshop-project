@@ -11,7 +11,7 @@
             <div class="btn-group-vertical">
                 <button type="button" class="btn btn-light active" id="info">Persoonlijke Informatie</button>
                 <button type="button" class="btn btn-light" id="orders">Geplaatste Orders</button>
-                <button type="button" class="btn btn-light" id="favorites">Favorieten</button>
+                <button type="button" class="btn btn-light" id="wishlist">Wishlist</button>
             </div>
         </div>
         <div class="content-section col-8">
@@ -58,14 +58,10 @@
 @push('scripts')
     <script>
         $(document).on('click', '#info', function (event) {
-            let section = $(this).attr('id')
-            
             axios({
                 method: 'POST',
                 url: '{{ route("profile.info") }}',
-                data: {
-                    section: section,
-                }
+                data: {}
             }).then(function (response) {
                 if (response.data.success) {
                     $('.active').removeClass('active')
@@ -83,13 +79,29 @@
             axios({
                 method: 'POST',
                 url: '{{ route("profile.orders") }}',
-                data: {
-                    
-                }
+                data: {}
             }).then(function (response) {
                 if (response.data.success) {
-                    $('.btn#info').removeClass('active')
+                    $('.active').removeClass('active')
                     $('.btn#orders').addClass('active')
+                    $('.content-section').html(response.data.html).replace()
+                }
+            }).catch(function (error) {
+
+            })
+        })
+    </script>
+
+    <script>
+        $(document).on('click', '#wishlist', function (event) {
+            axios({
+                method: 'POST',
+                url: '{{ route("profile.wishlist") }}',
+                data: {}
+            }).then(function (response) {
+                if (response.data.success) {
+                    $('.active').removeClass('active')
+                    $('.btn#wishlist').addClass('active')
                     $('.content-section').html(response.data.html).replace()
                 }
             }).catch(function (error) {

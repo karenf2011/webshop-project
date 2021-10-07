@@ -60,7 +60,6 @@
                                 <img src="{{ asset($product->images->first()->img_path) }}" loading="lazy" sizes="(max-width: 479px) 70vw, 
                                     (max-width: 767px) 67vw, 70vw" srcset="{{ asset($product->images->first()->img_path) }} 800w, 
                                     {{ asset($product->images->first()->img_path) }} 972w" alt="" class="image-11">
-                                <img src="/images/favorite.png" loading="lazy" width="41" alt="" class="image-13">
                             </div>
                             <div class="productinformation">
                                 <h4 class="productcardtitle">{{ $product->brand->name }} {{ $product->brand->line }} {{ $product->name }}</h4>

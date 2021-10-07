@@ -13,16 +13,18 @@ class Wishlist extends Model
 
     protected $table = 'wishlist';
 
+    protected $with = ['products'];
+
     protected $guarded = [
         'id'
     ];
 
-    public function product()
+    public function products()
     {
         return $this->belongsTo(Product::class, 'product_id');
     }
 
-    public function user()
+    public function users()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
