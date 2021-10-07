@@ -58,32 +58,7 @@ class ProductController extends Controller
             $products = $products->whereIn('brand_id', $request->brand);
                 
         }
-        //BRANDS
-        // if ($request->brand == 'ittala'){
-            
-        //     $products ->where('brand_id', 1);
-        // }
-        // if ($request->brand == 'ittala-ultima'){
-            
-        //     $products
-        //         ->where('brand_id', 2);
-        // }
-        // if ($request->brand == 'arabia-artica'){
-            
-        //     $products
-        //         ->where('brand_id', 3);
-        // }
-        // if ($request->brand == 'arabia-lumi'){
-            
-        //     $products
-        //         ->where('brand_id', 4);
-        // }
-        // if ($request->brand == 'marimekko'){
-            
-        //     $products
-        //         ->where('brand_id', 5);
-        // }
-    
+  
         if($request->sort == 'price_asc'){
             
             $products = $products
