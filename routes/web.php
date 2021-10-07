@@ -44,7 +44,7 @@ Route::post('delete', [ProfileController::class, 'delete'])->name('wishlist.dele
 Route::get('profile', [ProfileController::class, 'index'])->name('profile')->middleware('verified');
 Route::post('profile/info', [ProfileController::class, 'info'])->name('profile.info');
 Route::post('profile/orders', [ProfileController::class, 'orders'])->name('profile.orders');
-Route::post('profile/wishlist', [ProfileController::class. 'wishlist'])->name('profile.wishlist');
+Route::post('profile/wishlist', [ProfileController::class, 'wishlist'])->name('profile.wishlist');
 
 // Route::resource('user', UserController::class);
 

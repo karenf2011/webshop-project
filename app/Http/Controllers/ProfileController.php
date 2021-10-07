@@ -126,7 +126,46 @@ class ProfileController extends Controller
 
     public function wishlist()
     {
+        try {
+            $userId = Auth::id();
+            $wishlist = User::findOrFail($userId)->products;
 
+            $html = '<div class="row">';
+            $html .= '<div class="col-3">';
+            $html .= '<p>Brand</p>';
+            $html .= '</div>';
+            $html .= '<div class="col-3">';
+            $html .= '<p>Name</p>';
+            $html .= '</div>';
+            $html .= '</div>';
+
+            foreach ($wishlist as $favorite) {
+                $html .= '<a href="' . route('products.show', $favorite->slug) . '">';
+                $html .= '<div class="row">';
+                $html .= '<div class="col-3">';
+                $html .= '<p>' . $favorite->brand->name . ' ' . $favorite->brand->line . '</p>';
+                $html .= '</div>';
+                $html .= '<div class="col-3">';
+                $html .= '<p>' . $favorite->name . '</p>';
+                $html .= '</div>';
+                $html .= '</div>';
+                $html .= '</a>';
+            }
+
+            if (empty($wishlist[0])) {
+                $html .= '<div>Je hebt nog geen producten op je wishlist, kijk eens bij <a href="' . route('products.index') . '"> onze producten</a>!</div>';
+            }
+
+            return response()->json([
+                'success'   => true,
+                'html'      => $html,
+            ]);
+        } catch(Exception $e) {
+            return response()->json([
+                'success'   => false,
+                'message'   => $e->getMessage(),
+            ]);
+        }
     }
 
      /**
@@ -175,6 +214,7 @@ class ProfileController extends Controller
             $wishlistId = $request->w_id;
 
             Wishlist::where('id', $wishlistId)->delete();
+            Wishlist::where('id', $wishlistId)->forceDelete();
 
             $html = '<img src="/images/favorite.png" loading="lazy" width="41" alt="" class="image-13" />';
 
