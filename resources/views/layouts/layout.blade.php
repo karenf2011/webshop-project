@@ -117,8 +117,8 @@
         <a href="{{ route('home') }}" class="link-block w-inline-block">
             <h4 class="heading">HOME</h4>
         </a>
-        <a href="{{ route('products.index') }}" class="link-block w-inline-block">
-            <h4 class="heading">ALLE PRODUCTEN</h4>
+        <a href="{{ route('products.index') }}" class="link-block w-inline-block" id="alleproducten">
+            <h4 id="alleproductenh" class="heading">ALLE PRODUCTEN</h4>
         </a>
         @foreach ($categories as $category)
             <a href="{{ route ('categories.show', $category) }}" class="link-block w-inline-block">

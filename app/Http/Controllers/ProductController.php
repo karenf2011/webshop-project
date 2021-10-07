@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\TimePeriod;
@@ -52,6 +53,12 @@ class ProductController extends Controller
            
         }
 
+        if($request->brand){      
+            
+            $products = $products->whereIn('brand_id', $request->brand);
+                
+        }
+  
         if($request->sort == 'price_asc'){
             
             $products = $products
@@ -63,53 +70,13 @@ class ProductController extends Controller
                 ->sortByDesc('price');
         }
 
-        //BRANDS
-        if ($request->brand == 'italla'){
-            
-            $products = $products
-                ->where('brand_id', 1);
-        }
-        if ($request->brand == 'ittala-ultima'){
-            
-            $products = $products
-                ->where('brand_id', 2);
-        }
-        if ($request->brand == 'arabia-artica'){
-            
-            $products = $products
-                ->where('brand_id', 3);
-        }
-        if ($request->brand == 'arabia-lumi'){
-            
-            $products = $products
-                ->where('brand_id', 4);
-        }
-        if ($request->brand == 'marimekko'){
-            
-            $products = $products
-                ->where('brand_id', 5);
-        }
-    
-
         return view('products.index', [
             'products'      => $products,
+            'brands'        => Brand::all(), 
             'categories'    => Category::all()->whereNotin('id', 1),
         ]);
 
     }
-
-    // public function filterProducts(Request $request)
-
-    // {
-    //     $min = $request->input('min-price');
-    //     $max = $request->input('max-price');
-
-    //     return view('products.index', [
-    //         'products'  =>   Product::whereBetween('price', [$min, $max])
-    //         ->get()
-    //     ]);   
-     
-    // }
 
     /**
      * Show the form for creating a new resource.
@@ -191,16 +158,6 @@ class ProductController extends Controller
     {
         //
     }
-  
-//     public function search(Request $request) 
-//     {
-//         $query = $request->searchresults; 
-
-//         return view('search.search', [
-//             'categories'    => Category::all()->whereNotin('id', 1),
-//             'products'      => Product::search($query)->get(),
-//         ]);
-//     }
 
 //     public function wishlist ()
 //     {
