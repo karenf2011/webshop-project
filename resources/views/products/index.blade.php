@@ -107,7 +107,7 @@
                         loading="lazy" sizes="(max-width: 479px) 89vw, (max-width: 767px) 67vw, 70vw"
                         srcset="{{ asset($product->images->first()->img_path) }}"
                         alt="" class="image-11" />
-                    <img src="images/favorite.png"
+                    <img class="wishlist" p_id="{{ $product->id }}" src="images/favorite.png"
                         loading="lazy" width="41" alt="" class="image-13" />
                 </div>
                 <div class="productinformation">
@@ -146,3 +146,25 @@ slider();
 
 </script>
 @endsection
+
+{{-- @push('scripts')
+    <script>
+        $(document).on('click', '.wishlist', function (event) {
+            let product_id = $(this).attr('p_id');
+
+            axios({
+                method: 'POST',
+                url: '{{ route("wishlist") }}'
+                data: {
+                    product_id: product_id
+                }
+            }).then(function (response) {
+                if (response.data.success) {
+                   
+                }
+            }).catch(function (error) {
+            
+            })
+        })
+    </script>
+@endpush --}}

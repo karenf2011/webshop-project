@@ -31,6 +31,8 @@ Route::get('search', [ProductController::class, 'search'])->name('search');
 Route::resource('products', ProductController::class, ['parameters' => ['products' => 'product:slug']]);
 Route::resource('categories', CategoryController::class, ['parameters' => ['categories' => 'category:name']]);
 
+Route::post('wishlist', [ProductController::class, 'wishlist'])->name('wishlist')->middleware('verified');
+
 Route::get('cart', [CartController::class, 'index'])->name('cart');
 Route::post('cart', [CartController::class, 'store'])->name('cart.store');
 Route::post('cart/update', [CartController::class, 'update'])->name('cart.update');

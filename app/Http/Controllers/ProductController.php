@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\TimePeriod;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
@@ -198,5 +200,16 @@ class ProductController extends Controller
 //             'categories'    => Category::all()->whereNotin('id', 1),
 //             'products'      => Product::search($query)->get(),
 //         ]);
+//     }
+
+//     public function wishlist ()
+//     {
+//         $userId = Auth::id();
+//         // $productId = ;
+
+//         Wishlist::create([
+//             'user_id'       => $userId,
+//             'product_id'    => '',
+//         ])
 //     }
 }
