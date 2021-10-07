@@ -20,7 +20,7 @@
                         </select> -->
 
                         <select class="selectpicker" name="sort">
-                        <option selected value="{{ Session::get('sort') }}">Kies</option>
+                        <option selected value="{{ Session::get('sort') }}">Sorteer</option>
                         <option value="price_asc">Prijs oplopend</option>
                         <option value="price_dcs">Prijs aflopend</option>                       
                         </select>
