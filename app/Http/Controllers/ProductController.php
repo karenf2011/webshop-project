@@ -6,7 +6,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\TimePeriod;
-use App\Models\Wishlist;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -70,12 +70,25 @@ class ProductController extends Controller
                 ->sortByDesc('price');
         }
 
+        if (Auth::id() !== NULL) {
+            $userId = Auth::id();
+            $wishlist = User::findOrFail($userId)->wishlist;
+
+            if ($wishlist->isEmpty()) {
+                $wishlist = false;
+            } else {
+                $wishlist = $wishlist;
+            }
+        }  else {
+            $wishlist = false;
+        }
+
         return view('products.index', [
             'products'      => $products,
             'brands'        => Brand::all(), 
             'categories'    => Category::all()->whereNotin('id', 1),
+            'wishlist'      => $wishlist,
         ]);
-
     }
 
     /**
@@ -158,15 +171,4 @@ class ProductController extends Controller
     {
         //
     }
-
-//     public function wishlist ()
-//     {
-//         $userId = Auth::id();
-//         // $productId = ;
-
-//         Wishlist::create([
-//             'user_id'       => $userId,
-//             'product_id'    => '',
-//         ])
-//     }
 }

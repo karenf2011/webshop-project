@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sqits\UserStamps\Concerns\HasUserStamps;
 
-use Laravel\Scout\Searchable;
-
 class Product extends Model
 {
-    use HasFactory, HasUserStamps, SoftDeletes, Searchable;
+    use HasFactory, HasUserStamps, SoftDeletes;
 
     protected $table = 'products';
 
@@ -41,9 +39,9 @@ class Product extends Model
         return $this->belongsToMany(Category::class, 'product_categories');
     }
 
-    public function userWishlist()
+    public function wishlist()
     {
-        return $this->belongsToMany(User::class, 'wishlist');
+        return $this->hasMany(Wishlist::class, 'product_id');
     }
 
     public function images()
