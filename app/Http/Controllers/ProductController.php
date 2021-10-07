@@ -30,17 +30,18 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-
         $searchquery = $request->input('searchquery');
         $min_price = $request->input('min_price');
         $max_price = $request->input('max_price');
+        $sort = $request->input('sort');
         
-
         $products = Product::all();
 
         if($request->searchquery){
             
-            $products = Product::search($searchquery)->get();
+            $products = Product::where('name', 'LIKE', "%$searchquery%")
+            ->orWhere('slug', 'LIKE', "%$searchquery%")
+            ->get();
         }
 
 
@@ -50,24 +51,30 @@ class ProductController extends Controller
                 
                 $request->session()->put('max_price', $max_price);
                 $request->session()->put('min_price', $min_price);
-           
         }
 
         if($request->brand){      
-            
+
             $products = $products->whereIn('brand_id', $request->brand);
-                
         }
   
         if($request->sort == 'price_asc'){
             
             $products = $products
                 ->sortBy('price');
+               
+                $request->session()->put('sort', $sort);
+                $request->session()->get('sort');
+
         }
+
         else if($request->sort == 'price_dcs'){
                 
             $products = $products
                 ->sortByDesc('price');
+
+                $request->session()->put('sort', $sort);
+                $request->session()->get('sort');
         }
 
         if (Auth::id() !== NULL) {

@@ -5,25 +5,34 @@
 <div class="productsection wf-section">
     <div class="productpageheading">
         <h4 class="heading productcategory">Alle producten</h4>
+       
         <div class="div-block-51">
 
-            <div data-hover="false" data-delay="0" class="w-dropdown">
+            <!-- <div data-hover="false" data-delay="0" class="w-dropdown">
                 <div class="dropdown-toggle-2 w-dropdown-toggle">
                     <div class="icon w-icon-dropdown-toggle"></div>
                     <div class="text-block-10">Sorteer op</div>
-                </div>
-
-                <nav class="dropdown-list w-dropdown-list">
-
-                    <form method="GET" action="/products">
-                        <select name="sort">
+                </div> -->
+                <form method="GET" action="/products">
+                        <!-- <select  id="sort" name="sort">
                             <option value="price_asc">Prijs oplopend</option>
                             <option value="price_dcs">Prijs aflopend</option>
-                        </select>
+                        </select> -->
 
-                </nav>
-            </div>
+                        <select class="selectpicker" name="sort">
+                        <option selected value="{{ Session::get('sort') }}">Sorteer</option>
+                        <option value="price_asc">Prijs oplopend</option>
+                        <option value="price_dcs">Prijs aflopend</option>                       
+                        </select>
+                <!-- <nav class="dropdown-list w-dropdown-list">
+                </nav> -->
+            <!-- </div> -->
         </div>
+        
+        <script>
+
+        </script>
+
     </div>
     <div class="productcontainer w-container">
         <div class="filterwrapper">
@@ -32,7 +41,7 @@
             
                 @foreach ($brands as $brand)
                     <div class="brand">
-                        <input type="checkbox" class="brandcheckbox" name="brand[]" value="{{$brand->id}}">
+                        <input type="checkbox" class="brandcheckbox"  name="brand[]" value="{{$brand->id}}">
                         <label> {{$brand->name}} {{$brand->line}} </label>
                     </div>
                 @endforeach
@@ -40,6 +49,8 @@
                 </div>
 
             </div>
+
+ 
 
             <div class="pricefilter">
                 <div class="price-slider">
@@ -115,6 +126,39 @@
 
     </div>
 </div>
+<script>
+$('#mov_type').on('change', function() {
+    // Save value in localstorage
+    localStorage.setItem("mov_type", $(this).val());
+ 
+ $(document).ready(function() {
+   if ($('#mov_type').length) {
+      $('#mov_type').val(localStorage.getItem("mov_type"));
+   }
+});
+</script>
+<script>
+(function() {
+    let boxes = document.querySelectorAll("input[name='brand[]']");
+    for (var i = 0; i < boxes.length; i++) {
+        var box = boxes[i];
+        if (box.hasAttribute("value")) {
+            setupBox(box);
+        }
+    }
+
+    function setupBox(box) {
+        let storageId = box.getAttribute("value");
+        let oldVal    = localStorage.getItem(storageId);
+        box.checked = oldVal === "true" ? true : false;
+        box.addEventListener("change", function() {
+            localStorage.setItem(storageId, this.checked);
+        });
+    }
+})();
+</script>  
+
+
 <script>
     slider();
 

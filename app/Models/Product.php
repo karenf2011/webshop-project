@@ -19,11 +19,6 @@ class Product extends Model
 
     protected $with = ['brand', 'categories', 'time_period', 'images'];
     
-    public function searchableAs()
-    {
-        return 'posts_index';
-    }
-    
     public function brand()
     {
         return $this->belongsTo(Brand::class, 'brand_id');
