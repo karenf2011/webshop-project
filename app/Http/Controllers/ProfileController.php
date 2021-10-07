@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Wishlist;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -126,5 +127,66 @@ class ProfileController extends Controller
     public function wishlist()
     {
 
+    }
+
+     /**
+     * Add item to wishlist.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function store (Request $request)
+    {
+        try {
+            $userId = Auth::id();
+            $productId = $request->product_id;
+
+            $wishlist = Wishlist::create([
+                            'user_id'       => $userId,
+                            'product_id'    => $productId,
+                        ]);
+
+            $html = '<img src="images/passion.png" loading="lazy" width="41" alt="" class="image-13" />';
+
+            return response()->json([
+                'success'   => true,
+                'html'      => $html,
+                'w_id'        => $wishlist->id,
+            ]);
+        } catch(Exception $e) {
+            return response()->json([
+                'success'   => false,
+                'message'   => $e->getMessage(),
+            ]);
+        }
+    }
+
+    /**
+     * remove item from wishlist.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function delete (Request $request)
+    {
+        try {
+            $wishlistId = $request->w_id;
+
+            Wishlist::where('id', $wishlistId)->delete();
+
+            $html = '<img src="images/favorite.png" loading="lazy" width="41" alt="" class="image-13" />';
+
+            return response()->json([
+                'success'       => true,
+                'html'          => $html,
+            ]);
+        } catch(Exception $e) {
+            return response()->json([
+                'success'   => false,
+                'message'   => $e->getMessage(),
+            ]);
+        }
     }
 }
