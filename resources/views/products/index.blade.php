@@ -7,7 +7,7 @@
         <h4 class="heading productcategory">Alle producten</h4>
         <div class="div-block-51">
                 <form method="GET" action="/products">
-                    <select class="selectpicker" name="sort">
+                    <select name="sort">
                     <option selected value="{{ session('sort') }}">Sorteer</option>
                     <option value="price_asc">Prijs oplopend</option>
                     <option value="price_dcs">Prijs aflopend</option>                       
