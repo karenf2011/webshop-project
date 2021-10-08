@@ -91,17 +91,6 @@
 </div>
 
 <script>
-$('#mov_type').on('change', function() {
-    // Save value in localstorage
-    localStorage.setItem("mov_type", $(this).val());
- 
- $(document).ready(function() {
-   if ($('#mov_type').length) {
-      $('#mov_type').val(localStorage.getItem("mov_type"));
-   }
-});
-</script>
-<script>
 (function() {
     let boxes = document.querySelectorAll("input[name='brand[]']");
     for (var i = 0; i < boxes.length; i++) {
